@@ -1,3 +1,8 @@
+![profile](resource/profile.png)
+
+## event loop
+![profile](resource/event-loop.png)
+
 ##setTimeout()参数
 ```js
 function fn(a, b) {
