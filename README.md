@@ -2,6 +2,13 @@
 
 ## event loop
 ![profile](resource/event-loop.png)
+    
+    
+    异步编程的4种方法
+- 回调函数
+- 事件监听
+- 发布/订阅
+- Promises对象
 
 ##setTimeout()参数
 ```js
