@@ -13,5 +13,4 @@ function funOut(){
 
 function Func() {
     this.a = 'aaa';
-
 }
