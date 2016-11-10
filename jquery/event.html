@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+    <style media="screen">
+      .aaa {
+          display: block;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <a href="javascript:console.log('href js');" class="aaa" onclick="javascript:console.log('html onclick')">aaa</a>
+    <input class="js-input" type="text" name="name" value="" />
+
+　　<script type="text/javascript">
+      var aaa = document.getElementsByClassName("aaa")[0];
+      var $aaa = $(aaa);
+      $(document).on('click', '.aaa', function(){
+          console.log("jquery on('click') $(document).on('click')");
+      });
+
+
+
+
+      aaa.addEventListener('click', function(){
+          console.log("addEventListener click 捕获");
+      }, false);
+
+      aaa.addEventListener('click', function(){
+          console.log("addEventListener click 冒泡");
+      }, true);
+
+      aaa.onclick = function(){
+          console.log('script onclick');
+      };
+      aaa.addEventListener('touchstart', function(){
+          console.log("addEventListener touchstart");
+          }, false);
+
+      aaa.addEventListener('touchend', function(){
+          console.log("addEventListener touchend");
+          }, false);
+
+      aaa.addEventListener('mouseup', function(){
+          console.log("addEventListener mouseup");
+          }, false);
+
+      aaa.addEventListener('mousedown', function(){
+          console.log("addEventListener mousedown");
+      }, false);
+
+      $aaa.on('click',function(){
+          console.log("jquery on('click')");
+      });
+
+      $aaa.click(function(){
+          console.log("jquery click()");
+      });
+      var input = document.getElementsByClassName("js-input")[0];
+
+      input.onblur = function(){
+          console.log("script input onblur");
+      };
+
+      input.addEventListener('blur', function(){
+          console.log("addEventListener blur");
+      }, false);
+
+
+
+
+
+
+
+    </script>
+  </body>
+
+</html>
