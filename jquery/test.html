@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="keywords" content=""/>
+    <meta name="format-detection" content="telphone=no,email=no,address=no" />
+    <title></title>
+    <style media="screen">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        div1
+    </div>
+    <div class="div2">
+        div2
+    </div>
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+    $(function(){
+        $(function(){
+            var myData = {
+                name: 'hehe',
+                age: '23'
+            };
+            $('.div1').on('click', myData, function(event){
+                console.log(event.data === myData);  // true
+                console.log(event.data);             // Object {name: "hehe", age: "23"}
+            });
+
+            $('.div2').on('click', function(event, a, b, c){
+                console.log(a);     // 1
+                console.log(b);     // 2
+                console.log(c);     // [3, 4]
+                console.log(event.data);    // undefined
+            });
+            $('.div2').trigger('click', [1, 2, [3, 4]]);
+        });
+    });
+</script>
+</body>
+</html>
