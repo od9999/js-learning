@@ -66,3 +66,6 @@ f.b   //undefined
     Number instanceof Number  // false
     ```
 
+## 运算符优先级
+
+![profile](resource/youxianji.png)
