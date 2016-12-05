@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ryanzhao1993/js-learning#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "ejs": "^2.5.3",
+    "express": "^4.14.0",
+    "jquery": "^3.1.1"
   }
 }
