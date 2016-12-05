@@ -12,19 +12,16 @@ app.engine('.html', ejs.__express);
 // 静态文件中间件 指定静态文件存放的根目录的绝对路径
 app.use(express.static(path.join(__dirname, '../../public')));
 
-app.get('/cors', function(request, response){
-    response.render('cross-domain/cors', {
-        msg: 'cors demo'
+app.get('/domain', function(request, response){
+    response.render('cross-domain/domain', {
+        msg: 'domain'
     });
 });
 
-app.get('/json', function(request, response){
-    var person = {
-        "name": 'od',
-        "age": 23
-    };
-    response.setHeader('Access-Control-Allow-Origin', '*');
-    response.send(JSON.stringify(person));
+app.get('/iframe', function(request, response){
+    response.render('cross-domain/iframe', {
+        msg: '这个是iframe'
+    });
 });
 
 app.listen(8080);
