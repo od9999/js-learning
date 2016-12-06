@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
 
+
 let app = express();
 // 当渲染模板的时候，没有指定后缀名的时候自动添加此后缀名来查找模板文件
 app.set('view engine', 'html');
@@ -11,16 +12,15 @@ app.engine('.html', ejs.__express);
 // 静态文件中间件 指定静态文件存放的根目录的绝对路径
 app.use(express.static(path.join(__dirname, '../../public')));
 
-// 通过http://d1.cross-domain.com:8080/domain访问
-app.get('/domain', function(request, response){
-    response.render('cross-domain/document-domain/domain', {
-        msg: 'domain'
+app.get('/index', function(request, response){
+    response.render('cross-domain/postMessage/index', {
+        msg: 'postMessage demo'
     });
 });
 
 app.get('/iframe', function(request, response){
-    response.render('cross-domain/document-domain/iframe', {
-        msg: '这个是iframe'
+    response.render('cross-domain/postMessage/iframe', {
+        msg: 'postMessage demo'
     });
 });
 

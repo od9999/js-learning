@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>document.domain demo</title>
+</head>
+<body>
+
+<%=msg%>
+<button class="js-btn">调用iframe方法</button>
+<iframe src="http://d2.cross-domain.com:8080/iframe" frameborder="0" width="300" height="300"></iframe>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    console.log(document.domain);   // d1.cross-domain.com
+    document.domain = 'cross-domain.com';
+    console.log(document.domain);   // cross-domain.com
+
+
+    function funcD1(){
+        console.log('function funcD1 from http://d1.cross-domain.com:8080');
+    }
+
+    $('.js-btn').on('click', function(event) {
+        window.frames[0].funcD2();
+    });
+</script>
+</body>
+</html>

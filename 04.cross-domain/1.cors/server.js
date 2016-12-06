@@ -19,6 +19,15 @@ app.get('/cors', function(request, response){
 });
 
 app.get('/json', function(request, response){
+    console.log(request.headers);
+    /**
+    { host: 'www.cross-domain.com:8080',
+        connection: 'keep-alive',
+        origin: 'http://localhost:8080',
+        referer: 'http://localhost:8080/cors',
+        'accept-encoding': 'gzip, deflate, sdch',
+        'accept-language': 'zh-CN,zh;q=0.8,en;q=0.6' }*/
+
     var person = {
         "name": 'od',
         "age": 23

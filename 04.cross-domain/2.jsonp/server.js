@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
 
-// http://www.toutiao.com/i6319632661472084481/?tt_from=weixin&utm_campaign=client_share&from=singlemessage&app=news_article&utm_source=weixin&iid=5834115148&utm_medium=toutiao_android&wxshare_count=3&pbid=28785882547
 let app = express();
 // 当渲染模板的时候，没有指定后缀名的时候自动添加此后缀名来查找模板文件
 app.set('view engine', 'html');

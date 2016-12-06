@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>cors demo</title>
+    <title>document.domain demo</title>
     <style>
         html,body{
             background-color: #999;
@@ -15,10 +15,21 @@
 <body>
 
 <%=msg%>
-
+<button class="js-btn">调用top方法</button>
 
 <script src="/lib/jquery/dist/jquery.min.js"></script>
 <script>
+    console.log(document.domain);  // d2.cross-domain.com
+    document.domain = 'cross-domain.com';
+    console.log(document.domain);   // cross-domain.com
+
+    function funcD2(){
+        console.log('function funcD2 from http://d2.cross-domain.com:8080');
+    }
+
+    $('.js-btn').on('click', function(event) {
+        top.funcD1();
+    });
 
 </script>
 </body>
