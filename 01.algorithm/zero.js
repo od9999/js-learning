@@ -9,7 +9,6 @@ function isNegativeZero(num){
 }
 function isPositiveZero(num){
     return num === 0 && (1 / num > 0);
-
 }
 console.log(isNegativeZero(-0));
 console.log(isPositiveZero(+0));
