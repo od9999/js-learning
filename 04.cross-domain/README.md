@@ -29,3 +29,8 @@
 
 ## postMessage
 html5引入的message的API
+
+## window.name
+能使用这种方式跨域，有几个条件必不可少。
+- iframe标签的跨域能力
+- window.name属性值在文档刷新后依旧存在的能力

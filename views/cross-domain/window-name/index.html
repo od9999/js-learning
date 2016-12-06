@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>postMessage demo</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    var state = 0;
+    iframe.onload = function() {
+        if(state === 1) {
+            var data = (iframe.contentWindow.name);
+            console.log(data);
+            iframe.contentWindow.document.write('');
+            iframe.contentWindow.close();
+            document.body.removeChild(iframe);
+        } else if(state === 0) {
+            state = 1;
+            iframe.contentWindow.location = 'http://index.com:8080/proxy';
+        }
+    };
+    iframe.src = 'http://iframe.com:8080/iframe';
+    document.body.appendChild(iframe);
+</script>
+</body>
+</html>
