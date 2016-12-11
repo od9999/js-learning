@@ -28,23 +28,6 @@ function fn(a, b) {
 setTimeout(fn, 2000, 'aaa', 'bbb');  //setTimout aaa bbb
 ```
 
-##如何继承
-```js
-function Parent() {
-    this.name = 'aaa';
-}
-Parent.prototype.sayHello = function () {
-    console.log('hello');
-}
-function Child() {}
-```
-```js
-Child.prototype = new Parent();
-Child.prototype.__proto__ = Parent.prototype;
-Child.prototype = Object.create(Parent.prototype);
-Object.setPrototypeOf(Child.prototype, Parent.prototype);
-util.inherits(Child, Parent);  //node中使用 
-```
 
 ## 一个关于原型的题目
 
@@ -75,6 +58,45 @@ f.b   //undefined
     Number instanceof Function //true
     Number instanceof Number  // false
     ```
+##如何继承
+```js
+function Parent() {
+    this.name = 'aaa';
+}
+Parent.prototype.sayHello = function () {
+    console.log('hello');
+}
+function Child() {}
+```
+```js
+Child.prototype = new Parent();
+Child.prototype.__proto__ = Parent.prototype;
+Child.prototype = Object.create(Parent.prototype);
+Object.setPrototypeOf(Child.prototype, Parent.prototype);
+util.inherits(Child, Parent);  //node中使用 
+```
+
+- 情况1
+
+```javascript
+let p = new Parent();
+Child.prototype = p;
+// 或者
+Child.prototype = Object.create(Parent.prototype);
+```
+![profile](resource/inherit1.png)
+
+- 情况2
+
+```javascript
+Child.prototype.__proto__ = Parent.prototype;
+// 或者
+Object.setPrototypeOf(Child.prototype, Parent.prototype);
+// 或者 nodejs中util模块
+util.inherits(Child, Parent); //子类继承父类的原型上的方法
+```
+![profile](resource/inherit2.png)
+
 
 ## 运算符优先级
 

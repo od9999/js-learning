@@ -72,3 +72,6 @@ class Student extends Person {
 
 let s = new Student('od', 23, 'male');
 console.log(s);
+
+console.log(Student.__proto__ === Person);   // true
+console.log(Student.prototype.__proto__ === Person.prototype);   // true
