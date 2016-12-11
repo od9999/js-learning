@@ -31,3 +31,6 @@ for(let prop in person) {
 }
 
 console.log('toString' in person);  // true
+
+console.log(person.hasOwnProperty('gender'));  // true
+console.log(person.gender);
