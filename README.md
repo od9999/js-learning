@@ -3,9 +3,10 @@
 ## todo
 - es6 module
 - class
+- 接口改成jsonp?
 - 无损压缩
 - 地域回调
-
+- hash表 散列表
 
 
 ## event loop
