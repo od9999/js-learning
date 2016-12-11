@@ -1,5 +1,13 @@
 ![profile](resource/profile.png)
 
+## todo
+- es6 module
+- class
+- 无损压缩
+- 地域回调
+
+
+
 ## event loop
 ![profile](resource/event-loop.png)
     
