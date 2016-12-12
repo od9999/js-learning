@@ -13,9 +13,9 @@ function Child() {}
 //原型链继承
 let p = new Parent('父类');
 // Child.prototype = p;
-// Child.prototype = Object.create(Parent.prototype);
+Child.prototype = Object.create(Parent.prototype);
 
-Child.prototype.__proto__ = Parent.prototype;
+// Child.prototype.__proto__ = Parent.prototype;
 
 
 // Object.setPrototypeOf = function (childPrototype, superPrototype) {
@@ -23,11 +23,15 @@ Child.prototype.__proto__ = Parent.prototype;
 //     return childPrototype;
 // };
 
-//Object.setPrototypeOf(Child.prototype, Parent.prototype);
+//Object.setPrototypeOf(Chil65.899
+//
+//
+// d.prototype, Parent.prototype);
 //node中使用util模块:
 //util.inherits(Child, Parent); //子类继承父类的原型上的方法
 
 var c = new Child();
+console.log(c.name);
 // console.log(c.__proto__);  // 什么情况???
 // console.log(Child.prototype);  // 什么情况???
 
@@ -37,3 +41,17 @@ console.log(Parent.__proto__ === Function.prototype);  // true
 console.log(Object.getPrototypeOf(c) === p);
 
 console.log(Child.prototype.__proto__ === Parent.prototype);
+
+console.log('-------------');
+class Super {
+
+}
+class Sub extends Super{
+
+}
+let s = new Sub();
+let superObj = new Super();
+console.log(superObj.__proto__ === Super.prototype);
+console.log(s.__proto__ === Sub.prototype); // true
+console.log(Sub.__proto__ === Super);       // true
+console.log(Sub.prototype.__proto__ === Super.prototype);  // true

@@ -95,8 +95,22 @@ Object.setPrototypeOf(Child.prototype, Parent.prototype);
 // 或者 nodejs中util模块
 util.inherits(Child, Parent); //子类继承父类的原型上的方法
 ```
+
+
 ![profile](resource/inherit2.png)
 
+- 情况3
+
+```javascript
+class Parent {}
+class Child extends Parent{}
+
+```
+
+（1）子类的__proto__属性，表示构造函数的继承，总是指向父类。
+（2）子类prototype属性的__proto__属性，表示方法的继承，总是指向父类的prototype属性。
+
+![profile](resource/inherit-class.png)
 
 ## 运算符优先级
 
