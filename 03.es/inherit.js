@@ -23,10 +23,7 @@ Child.prototype = Object.create(Parent.prototype);
 //     return childPrototype;
 // };
 
-//Object.setPrototypeOf(Chil65.899
-//
-//
-// d.prototype, Parent.prototype);
+//Object.setPrototypeOf(Child.prototype, Parent.prototype);
 //node中使用util模块:
 //util.inherits(Child, Parent); //子类继承父类的原型上的方法
 

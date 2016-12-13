@@ -31,10 +31,13 @@ class Person {
     sayHello(){
         return `hello I'm ${this.name}, ${this.age} year old`;
     }
+    static walk(){
+        console.log('static function walk');
+    }
 }
 
 let p = new Person('od', 23);
-
+Person.walk();
 console.log(p.sayHello());
 
 console.log(p.__proto__);
@@ -65,14 +68,38 @@ class Student extends Person {
         // 子类必须在constructor方法中先调用super方法,否则新建实例时会报错,
         // 这是因为子类没有自己的this对象,而是继承父类的this对象
         // console.log(this.__proto__ === Student.prototype);  // ReferenceError: this is not defined
+
+        // ES6 规定，通过super调用父类的方法时，super会绑定子类的this。
         super(name, age); // false 运行时this:false
         this.gender = gender;
+    }
+    study(){
+        // super作为对象时, 指向A.prototype
+        console.log(super.sayHello() + ', study');
     }
 }
 
 let s = new Student('od', 23, 'male');
-console.log(s);
+Student.walk();
+s.study();
 
+console.log(s);
+console.log(Student instanceof Person);
 console.log(Person.__proto__ === Function.prototype);    // true
+
+
 console.log(Student.__proto__ === Person);   // true
 console.log(Student.prototype.__proto__ === Person.prototype);   // true
+
+
+
+// 值所以是这样 是按照下面这样实现继承的
+class A {
+}
+
+class B {
+}
+// B的实例继承A的实例
+Object.setPrototypeOf(B.prototype, A.prototype);
+// B继承A的静态属性
+Object.setPrototypeOf(B, A);
