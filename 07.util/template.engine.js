@@ -40,7 +40,7 @@ var TemplateEngine1 = function(tpl, data) {
     var re = /<%([^%>]+)?%>/g;
     var match = null;
     while(match = re.exec(tpl)) {
-        tpl = tpl.replace(match[0], data[match[1]])
+        tpl = tpl.replace(match[0], data[match[1]]);
     }
     return tpl;
 };

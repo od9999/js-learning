@@ -39,7 +39,7 @@
                 name: 'hehe',
                 age: '23'
             };
-            $('.div1').on('click', myData, function(event){
+            $('.div1').on('click', myData, function(event) {
                 console.log(event.data === myData);  // true
                 console.log(event.data);             // Object {name: "hehe", age: "23"}
             });

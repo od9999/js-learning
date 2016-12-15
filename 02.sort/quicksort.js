@@ -1,8 +1,9 @@
+// http://math.hws.edu/eck/jsdemo/sortlab.html 排序演示
+
 function quickSort(arr) {
     if(arr.length <= 1) {
         return arr;
     }
-
     let leftArr = [];
     let rightArr = [];
     let pivot = arr[0];

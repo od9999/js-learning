@@ -2,13 +2,14 @@
 
 ## todo
 
+- 切图 拖拽
 - 接口改成jsonp?
 - 无损压缩
 - 地域回调
 - 专题url
 - hash表 散列表
-
-
+- jquery proxy when
+- 文件上传 异步
 
 ## 遇过的难题
 

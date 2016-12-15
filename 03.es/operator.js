@@ -67,4 +67,5 @@ console.log(null == undefined);     // true
 console.log(false == null);   // false
 console.log(false == '');     // true
 console.log(NaN == false);    // false
-console.log();
+console.log(undefined == false);    // false
+console.log(null == false);    // false
