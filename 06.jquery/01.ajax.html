@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+    <style media="screen">
+
+
+    </style>
+</head>
+<body>
+<button class="js-btn">ajax</button>
+
+
+
+<script type="text/javascript">
+    var $btn = $('.js-btn');
+    $btn.on('click', function(){
+
+
+        $.ajax({
+            url: '/test',
+            method: 'post',
+            data: {},
+            dataType: 'json',
+            success: function (data) {
+                //如有必要,这里一定要对data做非空校验,避免data是null或者undefined的情况
+            },
+            async: true,
+            beforeSend: function(xhr){
+                console.log('beforeSend');
+                console.log(xhr);
+                xhr.abort();
+            },
+            error: function (error) {
+                //视情况,请将alert替换成你要的弹框模式
+                //视情况,请修改相应的文案
+                //视情况,请增加更多的status判断
+                console.log('error');
+                switch (error.status + '') {
+                    case '404':
+                        alert('抱歉！好像网络出问题了，请检查您的网络设置');
+                        break;
+                    case '500':
+                        alert('抱歉！好像系统有异常！请联系管理员解决');
+                        break;
+                    default:
+                        alert('抱歉！可能系统出现异常或网络质量不好');
+                        break;
+                }
+            },
+
+            //无论是success,还是error,都会触发complete这个方法
+            complete: function () {
+                //toto:这里可以统一将置灰的按钮变绿
+                console.log('complete');
+            }
+        });
+    });
+
+</script>
+</body>
+
+</html>

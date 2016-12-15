@@ -51,7 +51,7 @@ function get(){
                     alert("error");
                 }
             }
-        }
+        };
         request.send(null);
     }
 }
@@ -63,15 +63,16 @@ function post(){
     if(request){
         request.open("POST", "http://test.com/", true);
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8;");
-        request.send("keywords=xxx");
-        request.onreadystatechange = function(){
-            if(request.readyState == 4){
-                if(request.status >= 200 && request.status < 300 || request.status == 304){
+        request.onreadystatechange = function() {
+            if (request.readyState == 4) {
+                if (request.status >= 200 && request.status < 300 || request.status == 304) {
                     alert("success");
                 } else {
                     alert("error");
                 }
             }
-        }
+        };
+        request.send("keywords=xxx"); // 发送给服务端的数据
+
     }
 }

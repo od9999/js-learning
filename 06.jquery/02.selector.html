@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+    <style media="screen">
+
+
+    </style>
+</head>
+<body>
+
+<div class="out" id="id-out">
+    <div class="in"></div>
+</div>
+<div class="out"></div>
+
+
+
+<script type="text/javascript">
+    var $out = $('.out');
+    var $outId = $('#id-out');
+    console.log($out);
+    console.log($outId);
+    var $in = $('.in', $out);
+    var $in1 = $('.in', $outId);
+    console.log($in);
+    console.log($in1);
+</script>
+</body>
+
+</html>
