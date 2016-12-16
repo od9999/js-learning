@@ -25,7 +25,11 @@ let unique = function(arr) {
     }
     return data;
 };
+let unique2 = function(arr) {
+    return Array.from(new Set(arr));
+};
 console.log(unique([1,13,24,11,11,14,1,2]));
+console.log(unique2([1,13,24,11,11,14,1,2]));
 
 // 统计一个字符串出现最多的字母
 // 输入 ： afjghdfraaaasdenas
