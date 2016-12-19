@@ -16,9 +16,21 @@
 </div>
 <div class="out"></div>
 
+<div id="id-out"></div>
 
 
 <script type="text/javascript">
+    var outId = document.getElementById('id-out');
+    var outClass = document.getElementsByClassName('out');
+    console.log(outId);
+    console.log(outClass);
+    console.log(outClass[0]);
+    console.log({}.toString.call(outId));
+    console.log({}.toString.call(outClass));
+    console.log({}.toString.call(outClass[0]));
+
+    console.log(outClass[0] === outId);   // true
+    console.log('--------------');
     var $out = $('.out');
     var $outId = $('#id-out');
     console.log($out);
@@ -30,6 +42,8 @@
     console.log($in1);
 
     console.log($out.is('.out'));
+
+
 </script>
 </body>
 
