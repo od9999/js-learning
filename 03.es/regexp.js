@@ -1,6 +1,5 @@
 let reg = /test/g; // es5规定使用正则表达式字面量必须像直接调用RegExp构造函数一样 每次都创建新的RegExp实例
 
-
 console.log(reg.global);
 console.log(reg.ignoreCase);
 console.log(reg.multiline);

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽 demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #div1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            cursor: move;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+
+
+<script>
+    //获取需要拖拽的div
+    var obj = document.getElementById("div1");
+    //添加鼠标按下事件
+    var mouseDownX,
+        mouseDownY,
+        initX,
+        initY,
+        flag = false;
+
+    obj.onmousedown = function(event) {
+        event = event || window.event;
+        //鼠标按下时的鼠标所在的X，Y坐标
+
+        mouseDownX = event.pageX;
+        mouseDownY = event.pageY;
+
+        //初始位置的X，Y 坐标
+        initX = obj.offsetLeft;
+        initY = obj.offsetTop;
+
+        //表示鼠标已按下
+        flag = true;
+    };
+    obj.onmousemove = function(event) {
+        event = event || window.event;
+        // 确保鼠标已按下
+        if(flag) {
+            var mouseMoveX = event.pageX,
+                mouseMoveY = event.pageY;
+
+            this.style.left = (mouseMoveX - mouseDownX + initX) + "px";
+            this.style.top = (mouseMoveY - mouseDownY + initY) + "px";
+        }
+
+    };
+
+    obj.onmouseup = function() {
+        //标识已松开鼠标
+        flag = false;
+    };
+
+</script>
+</body>
+</html>
