@@ -1,5 +1,5 @@
 
-function* test() {
+function* test(val) {
     console.log('1111111');
     var result1 = yield 'a';
     console.log(result1);
@@ -21,4 +21,16 @@ console.log('-----------------');
 console.log(result.next(33));
 console.log('-----------------');
 console.log(result.next());
+
+var obj = {};
+obj[Symbol.iterator] = function* () {
+    yield 1;
+    yield 2;
+    yield 3;
+    return 4;
+};
+
+for(val of obj){
+    console.log(val); // 不包含4
+}
 

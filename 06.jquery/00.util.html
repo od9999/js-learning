@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+
+
+    </style>
+</head>
+<body>
+
+
+
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+//    工具函数主要分为下面几类:
+//    浏览器及特性检测
+//    数组和对象操作
+//    测试操作
+//    字符串操作
+//    Url操作
+
+    console.log($.trim('   basd   '));
+
+
+    $(function() {
+
+        // 盒子模型分两类，一类是W3C盒子模型，一类是IE盒子模型。
+        // 两者的根本区别在于W3C的盒子模型不包括padding与border，仅指content的Height和Width，而IE盒子模型　　包含padding与border。
+        console.log($.support.boxModel);
+
+    });
+
+</script>
+</body>
+
+</html>
