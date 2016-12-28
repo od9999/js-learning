@@ -1,4 +1,21 @@
 // 函数柯里化
+// const add = x =>  => x + y;
+const add = function(x) {
+    return function(y) {
+        return x + y;
+    }
+};
+
+const increment = add(1);
+const addFive = add(5);
+
+console.log(increment(3));
+//4
+
+console.log(addFive(10));
+// 15
+
+
 
 var currying = function (fn) {
     var _args = [];
