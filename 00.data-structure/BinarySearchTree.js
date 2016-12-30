@@ -1,89 +1,103 @@
-function Node(element, left, right) {
-    this.element = element;
-    this.level = 0;
-    this.left = left;
-    this.right = right;
+class Node {
+    constructor(data, left, right) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
+    }
 }
 
-function BinarySearchTree() {
-    this.root = null;
-}
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+    }
 
-BinarySearchTree.prototype = {
-    insert: function (element) {
-        var n = new Node(element, null, null);
-        if (this.root == null) {
-            this.root = n;
-            n.level = 0;
-            return true;
-        } else {
-            var current = this.root;
-            var parent = null;
-            while (current != null) {
-                if (element < current.element) {
-                    parent = current;
-                    current = current.left;
-                } else if (element > current.element) {
-                    parent = current;
-                    current = current.right;
-                } else {
-                    return false;
+    insert(data) {
+        let n = new Node(data, null, null);
+        if (!this.root) {
+            return this.root = n;
+        }
+        let currentNode = this.root;
+        let parent = null;
+        while (1) {
+            parent = currentNode;
+            if (data < currentNode.data) {
+                currentNode = currentNode.left;
+                if (currentNode === null) {
+                    parent.left = n;
+                    break;
+                }
+            } else {
+                currentNode = currentNode.right;
+                if (currentNode === null) {
+                    parent.right = n;
+                    break;
                 }
             }
-            n.level = parent.level + 1;
-            if (element < parent.element) {
-                parent.left = n;
-
-            } else {
-                parent.right = n;
-            }
-            return true;
-        }
-    },
-
-    toString: function () {
-        return this.inOrder(this.root, function (n) {
-            return "\t" + n.element + '(' + n.level + ")\t";
-        });
-    },
-
-    inOrder: function (n, fn) {// 中序遍历
-        if (!n) {
-            return '';
-        } else {
-            return this.inOrder(n.left, fn) + fn(n) + this.inOrder(n.right, fn);
-        }
-    },
-
-    preOrder: function (n, fn) { // 先序遍历
-        if (!n) {
-            return '';
-        } else {
-            return fn(n) + this.preOrder(n.left, fn) + this.preOrder(n.right, fn);
-        }
-    },
-
-    postOrder: function (n, fn) {// 后序遍历
-        if (!n) {
-            return '';
-        } else {
-            return this.postOrder(n.left, fn) + this.postOrder(n.right, fn) + fn(n);
         }
     }
-};
 
-var a = new BinarySearchTree();
-a.insert(3);
-a.insert(1);
-a.insert(5);
-a.insert(2);
-a.insert(4);
-console.log("inorder: " + a.toString());
+    remove(data) {
+        this.root = this.removeNode(this.root, data)
+    }
 
-var fn = function (n) {
-    return "\t" + n.element + '(' + n.level + ")\t";
-};
-var s1 = a.preOrder(a.root, fn);
-var s2 = a.postOrder(a.root, fn);
-console.log("pre order:" + s1);
-console.log("post order:" + s2);
+    removeNode(node, data) {
+        if (node == null) {
+            return null;
+        }
+
+        if (data == node.data) {
+            // no children node
+            if (node.left == null && node.right == null) {
+                return null;
+            }
+            if (node.left == null) {
+                return node.right;
+            }
+            if (node.right == null) {
+                return node.left;
+            }
+
+            let getSmallest = function(node) {
+                if(node.left === null && node.right == null) {
+                    return node;
+                }
+                if(node.left != null) {
+                    return node.left;
+                }
+                if(node.right !== null) {
+                    return getSmallest(node.right);
+                }
+
+            }
+            let temNode = getSmallest(node.right);
+            node.data = temNode.data;
+            node.right = this.removeNode(temNode.right,temNode.data);
+            return node;
+
+        } else if (data < node.data) {
+            node.left = this.removeNode(node.left,data);
+            return node;
+        } else {
+            node.right = this.removeNode(node.right,data);
+            return node;
+        }
+    }
+
+    find(data) {
+        var current = this.root;
+        while (current != null) {
+            if (data == current.data) {
+                break;
+            }
+            if (data < current.data) {
+                current = current.left;
+            } else {
+                current = current.right
+            }
+        }
+        return current.data;
+    }
+
+}
+
+module.exports = BinarySearchTree;  

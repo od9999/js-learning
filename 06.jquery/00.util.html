@@ -24,15 +24,23 @@
 
     console.log($.trim('   basd   '));
 
-
-    $(function() {
-
-        // 盒子模型分两类，一类是W3C盒子模型，一类是IE盒子模型。
-        // 两者的根本区别在于W3C的盒子模型不包括padding与border，仅指content的Height和Width，而IE盒子模型　　包含padding与border。
-        console.log($.support.boxModel);
-
+    var arr = [1, 2, 5];
+    $.each(arr, function(index, item) {
+        console.log(index);
+        console.log(item);
+        console.log(this === window);  // false
+        console.log(this === arr);  // false
+        console.log(this); // Number {[[PrimitiveValue]]: 1}  Number {[[PrimitiveValue]]: 2}  Number {[[PrimitiveValue]]: 5}
     });
 
+    console.log('----------------------');
+    let arr2 = $.grep(arr, function(item, index){
+        console.log(index);
+        console.log(item);
+        console.log(this === window);  // true
+        return item > 1;
+    });
+    console.log(arr2);
 </script>
 </body>
 
