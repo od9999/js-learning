@@ -8,47 +8,64 @@
     <meta name="format-detection" content="telphone=no,email=no,address=no" />
     <title>点击穿透</title>
     <style>
-        html, body {
-            width: 100%;
-            height: 100%;
-        }
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        .container #underLayer{
-            height: 400px;
-        }
+	body{
+		margin: 0;
+	}
+	.container{
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	.layer-title{
+		width: 100%;
+		margin: 50px 0;
+		text-align: center;
+	}
+	.layer-action{
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		text-align: center;
+	}
+	.btn{
+		background-color: #08c;
+		border: 0;
+		color: #fff;
+		height: 30px;
+		line-height: 30px;
+		width: 100px;
+	}
 
-        .container #popupLayer {
-            position: absolute;
-            text-align: center;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            width: 80%;
-            height: 100px;
-            background-color: #fff;
+	#underLayer{
+		background-color: #eee;
+		width: 90%;
+		height: 500px;
+		line-height: 500px;
+		margin: 30px auto 200px;
+		text-align: center;
+	}
 
-        }
-        #bgMask {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.6;
-            z-index: 500;
-        }
+	#popupLayer{
+		/*display: none;*/
+		background-color: #fff;
+		width: 80%;
+		height: 200px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-left: -40%;
+		margin-top: -100px;
+		z-index: 1;
+	}
 
+	#bgMask{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.6);
+	}
     </style>
 </head>
 <body>
@@ -68,9 +85,23 @@
 <script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 <script>
     //https://segmentfault.com/a/1190000003848737
-    $('#closePopup').on('tap', function(event){
+
+    $('#closePopup').on('touchstart', function(event){
         $('#popupLayer').hide();
         $('#bgMask').hide();
+        
+        // 方法1
+//      event.preventDefault();
+//      event.stopPropagation();
+	
+		// 方法2
+		return false;
+
+		// 方法3
+//      $('#underLayer').css('pointer-events', 'none');
+//  	setTimeout(function(){
+//      	$('#underLayer').css('pointer-events', 'auto');
+//  	}, 400);
     });
 
     $('#underLayer').on('click', function(event){
