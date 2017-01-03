@@ -1,0 +1,12 @@
+@import url(./import.css);
+
+.index {
+    background-color: #666;
+}
+
+.index .img{
+    height: 80px;
+    width: 80px;
+    background: url(./avatar2.jpg) no-repeat;
+    background-size: 100% 100%;
+}
