@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
+
 const multer  = require('multer');
 
 let upload = multer({ dest: '../public/upload/' });
@@ -23,7 +24,21 @@ app.get('/', function(request, response){
 
 app.post('/upload', upload.single('file'), function(request, response){
     console.log(request.file);
-    response.end('a');
+    let person = {
+        name: 'od',
+        age: 24
+    };
+    person = JSON.stringify(person);
+    let callback = request.query.cb;
+//     let script = `<script type="text/javascript">
+// 　　　　window.top.window['callback'](11);
+//         ${callback}(1);
+// 　　</script>`;
+    console.log(callback);
+    let script = `<script type="text/javascript">
+        window.top.${callback}(${person});
+　　</script>`;
+    response.end(script);
 });
 
 app.listen(8080);
