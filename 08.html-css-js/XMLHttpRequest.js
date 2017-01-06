@@ -46,9 +46,9 @@ function get(){
              */
             if(request.readyState == 4){
                 if(request.status >= 200 && request.status < 300 || request.status == 304){
-                    alert("success");
+                    console.log("success");
                 } else {
-                    alert("error");
+                    console.log("error");
                 }
             }
         };

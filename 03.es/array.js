@@ -27,8 +27,8 @@ let arrOf = Array.of.apply(null, arr);
 arrOf.push(1);
 console.log(arrOf);
 console.log(arr);
-// 影响原数组的方法:
 
+// 影响原数组的方法:
 //栈方法
 arr.push(7);
 arr.pop();

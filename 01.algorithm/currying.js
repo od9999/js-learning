@@ -72,10 +72,28 @@ var adder = function () {
         return _adder;
     });
 };
+var adder2 = function () {
+    var _args = [];
+    return (function _adder(...args) {
+        if (args.length === 0) {
+            return _args.reduce(function (a, b) {
+                return a + b;
+            });
+        }
+        // [].push.apply(_args, args);
+        _args = _args.concat(args);
+        return _adder;
+    });
+};
 
-var sum = adder();
+var sum = adder2();
 console.log(sum);     // [Function]
 
 sum(100,200)(300);    // 调用形式灵活，一次调用可输入一个或者多个参数，并且支持链式调用
 sum(400);
 console.log(sum());   // 1000 （加总计算）
+
+function add1(...args) {
+    return args.reduce((a, b) => a + b);
+}
+console.log(add1(1,2,3));

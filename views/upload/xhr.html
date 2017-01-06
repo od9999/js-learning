@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>xhr 提交文件 demo</title>
+</head>
+<body>
+
+<%=msg%>
+<form id="upload-form" action="upload" method="post" enctype="multipart/form-data" >
+    <input type="file" id="upload" name="file" /> <br />
+    <input type="submit" value="Upload" />
+</form>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+
+    var form = $("#upload-form");
+    form.on('submit', function(event) {
+        // HTML5提出了XMLHttpRequest对象的第二版，从此ajax能够上传文件了。这是真正的"异步上传"，是将来的主流。
+        // 检查是否支持FormData
+        if(window.FormData) {
+            var formData = new FormData();
+            // 建立一个upload表单项，值为上传的文件
+            formData.append('file', document.getElementById('upload').files[0]);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', $(this).attr('action'), true);
+            // 定义上传完成后的回调函数
+//            xhr.onload = function () {
+//                if (xhr.status === 200) {
+//                    console.log('上传成功');
+//                } else {
+//                    console.log('出错了');
+//                }
+//            };
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+                        console.log(xhr.responseText);
+                        console.log("success");
+                    } else {
+                        console.log("error");
+                    }
+                }
+            };
+            xhr.send(formData);
+        }
+    });
+
+
+
+
+</script>
+</body>
+</html>
