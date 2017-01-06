@@ -27,7 +27,7 @@ app.post('/upload', upload.single('file'), function(request, response){
     let obj = {
         name: 'od',
         age: 23
-    }
+    };
     response.json(obj);
 });
 
