@@ -36,3 +36,6 @@ obj.func();
 console.log(typeof a);  // undefined
 console.log(typeof b);  // number
 console.log(b);  // 3
+
+console.log('-------------------');
+

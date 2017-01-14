@@ -2,10 +2,13 @@
 
 ## todo
 
-- 地域回调
 - 专题url
 - hash表 散列表
 - jquery proxy when
+
+- 地域回调
+
+计数器
 
 ## 遇过的难题
 
