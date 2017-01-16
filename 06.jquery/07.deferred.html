@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="keywords" content=""/>
+    <meta name="format-detection" content="telphone=no,email=no,address=no" />
+    <title></title>
+    <style media="screen">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+<script src="jquery-2.1.1.min.js"></script>
+<script>
+//	$.ajax({
+//		url: "test.json",
+//		success: function(data){
+//			console.log("success---------");
+//			console.log(data);
+//		},
+//		error:function(data){
+//			console.log("error---------");
+//			console.log(data);
+//		}
+//	});
+
+	var deferred = $.ajax("test.json")
+			.done(function(data){
+				console.log("done---------");
+				console.log(data);
+			})
+			.fail(function(data){
+				console.log("fail---------");
+				console.log(data);
+			})
+			.complete(function(data){
+				console.log("complete---------");
+				console.log(data);
+				console.log(deferred === data);  // true
+			})
+			.done(function(data){
+				console.log("自己定义的callback---------");
+				console.log(data);
+			});
+	console.log(deferred);
+
+
+</script>
+</body>
+</html>
