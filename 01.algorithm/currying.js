@@ -1,5 +1,5 @@
-// 函数柯里化
-// const add = x =>  => x + y;
+// 函数柯里化 实现方法: 闭包 或者 bind
+// const add = x => y => x + y;
 const add = function(x) {
     return function(y) {
         return x + y;
@@ -97,3 +97,10 @@ function add1(...args) {
     return args.reduce((a, b) => a + b);
 }
 console.log(add1(1,2,3));
+
+function sayHello(name, age) {
+    console.log(name, age);
+}
+var newSayHello = sayHello.bind(null, 'zr');
+sayHello('od', 23);
+newSayHello(23);
