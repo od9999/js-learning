@@ -86,7 +86,7 @@ let sum = arr5.reduce(function(prev, cur, index, array){
     console.log(prev);
     console.log(cur);
     return prev + cur;
-}, 1);
+}, 0);
 
 console.log(sum);
 

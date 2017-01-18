@@ -69,7 +69,7 @@ class BinarySearchTree {
                     return getSmallest(node.right);
                 }
 
-            }
+            };
             let temNode = getSmallest(node.right);
             node.data = temNode.data;
             node.right = this.removeNode(temNode.right,temNode.data);
@@ -96,9 +96,61 @@ class BinarySearchTree {
                 current = current.right
             }
         }
-        return current.data;
+        return current;
+    }
+
+    inorder() {
+        this._inorder(this.root);
+    }
+    _inorder(node) {
+        if(!!node) {
+            this._inorder(node.left);
+            console.log(node.data);
+            this._inorder(node.right);
+        }
+    }
+
+
+    preorder() {
+        this._preorder(this.root);
+    }
+    _preorder(node) {
+        if(!!node) {
+            console.log(node.data);
+            this._preorder(node.left);
+            this._preorder(node.right);
+        }
+    }
+
+    postorder() {
+        this._postorder(this.root);
+    }
+    _postorder(node) {
+        if(!!node) {
+            this._postorder(node.left);
+            this._postorder(node.right);
+            console.log(node.data);
+        }
     }
 
 }
 
+let tree = new BinarySearchTree();
+
+tree.insert(1);
+tree.insert(2);
+tree.insert(3);
+tree.insert(4);
+
+tree.inorder();
+console.log('--------------');
+tree.preorder();
+console.log('--------------');
+tree.postorder;
+console.log(tree.root);
+console.log(tree.root.right);
+console.log(tree.root.right.right);
+console.log(tree.root.right.right.right);
+console.log('-------');
+console.log(tree.find(4));
 module.exports = BinarySearchTree;

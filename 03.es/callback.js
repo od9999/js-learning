@@ -3,8 +3,7 @@ function test() {
 }
 
 setTimeout(function() {
-    var name = 1;
+    let name = 1;
     console.log(name);
     test();
-
 });

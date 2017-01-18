@@ -22,7 +22,7 @@
 const add10 = (a) => a + 10;
 
 // 依赖于外部变量的非纯函数
-let x = 10
+let x = 10;
 const addx = (a) => a + x;
 
 // 会产生副作用的非纯函数
