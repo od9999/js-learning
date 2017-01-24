@@ -5,7 +5,7 @@
 - 专题url
 - hash表 散列表
 - jquery proxy when
-
+- FileReader
 - 地域回调
 
 计数器

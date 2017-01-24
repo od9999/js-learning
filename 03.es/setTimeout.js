@@ -20,3 +20,12 @@ setTimeout(function C(){
 }, 1000);
 
 // ACBD
+
+var index = 0;
+function add(index) {
+	console.log(index);
+	index++;
+	setTimeout(add, 350, index);
+}
+
+setTimeout(add, 350, index);
