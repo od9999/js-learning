@@ -17,7 +17,7 @@ console.log(isPalindrom('redivider'));
 let unique = function(arr) {
     let hashTable = {};
     let data = [];
-    for(let i = 0, length = arr.length;i < length; i++) {
+    for(let i = 0, length = arr.length; i < length; i++) {
         if(!hashTable[arr[i]]) {
             hashTable[arr[i]] = true;
             data.push(arr[i]);

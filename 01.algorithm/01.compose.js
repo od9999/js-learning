@@ -19,3 +19,7 @@ function multi(x) {
     return x * 2;
 }
 console.log(compose(add, multi)(5));
+
+const func = compose();
+
+console.log(func(1));

@@ -15,7 +15,7 @@ function test() {
 }
 
 function call(fn) {
-    let b = 2;
+    let a = 2;
     fn();
 }
 
