@@ -36,7 +36,7 @@ console.log(Object.keys(person));   // [ 'name', 'age' ]
 
 console.log('----for in--------');
 for(let prop in person) {
-    console.log(prop);  // name age sayHello
+    console.log(prop);  // name age type sayHello run
 }
 console.log('------------');
 
