@@ -34,11 +34,7 @@ console.log(Object.keys(person));   // [ 'name', 'age', 'sayHi' ]
 
 console.log('----for in--------');
 for(let prop in person) {
-<<<<<<< HEAD
-    console.log(prop);  // name age type sayHello run
-=======
     console.log(prop);  // name age sayHi type sayHello run
->>>>>>> 413271915be271a17f9dce90f50ae4bee8055ddc
 }
 console.log('------------');
 
