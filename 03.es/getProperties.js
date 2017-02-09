@@ -5,12 +5,13 @@ Animal.prototype.run = function(){
     console.log('Animal run');
 };
 
-Person.prototype = new Animal();
 
 function Person(name, age){
     this.name = name;
     this.age = age;
+    this.sayHi = function() {};
 }
+Person.prototype = new Animal();
 
 Person.prototype.sayHello = function(){
     console.log('Person hello ');
@@ -28,19 +29,20 @@ Reflect.defineProperty(person, 'gender', {
  *  for in 获取obj上的可枚举属性 和obj原型链对象的可枚举属性
  *  in 属性是否能够访问到属性 只要在原型链上就返回true
  */
-
-
-
-console.log(Object.getOwnPropertyNames(person));  // [ 'name', 'age', 'gender' ]
-console.log(Object.keys(person));   // [ 'name', 'age' ]
+console.log(Object.getOwnPropertyNames(person));  // [ 'name', 'age', 'sayHi', 'gender' ]
+console.log(Object.keys(person));   // [ 'name', 'age', 'sayHi' ]
 
 console.log('----for in--------');
 for(let prop in person) {
+<<<<<<< HEAD
     console.log(prop);  // name age type sayHello run
+=======
+    console.log(prop);  // name age sayHi type sayHello run
+>>>>>>> 413271915be271a17f9dce90f50ae4bee8055ddc
 }
 console.log('------------');
 
 console.log('toString' in person);  // true
 
 console.log(person.hasOwnProperty('gender'));  // true
-console.log(person.gender);
+console.log(person.gender);  // male
