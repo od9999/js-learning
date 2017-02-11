@@ -1,7 +1,7 @@
 ![profile](resource/profile.png)
 
 ## todo
-
+- 阻止按钮多次提交 节流函数
 - 专题url
 - hash表 散列表
 - jquery proxy when
