@@ -21,6 +21,13 @@ Deferred.prototype.resolve = function(){
     }
     return this;
 };
+Deferred.prototype.reject = function(){
+	var fails = this.failCallbacks;
+	for(var i = 0, len = fails.length; i < len; i++){
+		fails[i]();
+	}
+	return this;
+};
 
 // let deferred = new Deferred();
 // deferred.done(function() {
@@ -39,7 +46,9 @@ function when(...deferreds) {
         console.log("已执行了[ " + ++aIdx + " ]个方法");
         if(aIdx == argsLength) {
             deferred.resolve(); // 改变Deferred对象的执行状态
-        }
+        } else {
+			deferred.reject();
+		}
     }
     for(let i = 0; i < argsLength; i++){
         deferreds[i].done(callback);
@@ -48,13 +57,20 @@ function when(...deferreds) {
 }
 
 // 自定义异步执行的方法
-let wait = function(intval) {
+let wait = function(millisecond) {
     var deferred = new Deferred(); //在函数内部，新建一个Deferred对象
     var tasks = function(){
-        console.log("耗时[ " + intval + " ]ms的操作执行完毕！");
+        console.log("耗时[ " + millisecond + " ]ms的操作执行完毕！");
         deferred.resolve(); // 改变Deferred对象的执行状态
     };
-    setTimeout(tasks, intval);
+    setTimeout(tasks, millisecond);
+
+	// var start = new Date();
+	// while(new Date() - start <= millisecond) {
+	// 	// block
+	// }
+	// console.log("耗时[ " + millisecond + " ]ms的操作执行完毕！");
+	// deferred.resolve(); // 改变Deferred对象的执行状态
     return deferred; // 返回Deferred对象
 };
 

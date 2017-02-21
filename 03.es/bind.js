@@ -2,13 +2,13 @@
 Function.prototype.bind = function(context, ...args) {
     let self = this;
     return function(...argv) {
-        self.apply(context, args.concat(argv));
+        return self.apply(context, args.concat(argv));
     };
 };
 
 Function.prototype.bind = function(context, ...args) {
     return (...argv) => {
-        this.apply(context, args.concat(argv));
+        return this.apply(context, args.concat(argv));
     };
 };
 
@@ -18,8 +18,10 @@ let obj = {
     name : 'bbb'
 };
 
-function test() {
+function test(a, b, c, d, e) {
+	console.log(a, b, c, d, e);
     console.log(this.name);
+	return 1;
 }
 
-test.bind(obj)();
+console.log(test.bind(obj, 1, 2)(3, 4));
