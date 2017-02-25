@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- 呵呵 -->
+<!-- 呵呵 -->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<div id="div1">id div1</div>
+	<div id="div1">id div1 another</div>
+
+	<p>tag p1</p>
+	<p>tag p2</p>
+	<p name="pname">tag p3 name</p>
+
+
+	<script>
+        /**
+		 * 如果多个id相同 拿到第一个
+		 * 拿不到返回null
+         */
+		console.log(document.getElementById('div1'));
+        console.log(document.getElementById('empty')); // null
+
+        /**
+		 * HTMLCollection对象与NodeList对象类似，可以使用[]或者item()访问其中的项
+		 * 还有namedItem方法
+         * @type {NodeList}
+         */
+		var ps = document.getElementsByTagName('p');
+		console.log(ps);
+		console.log(Object.prototype.toString.call(ps));  // [object HTMLCollection]
+		console.log(ps.item(1));
+		console.log(ps.namedItem('pname'));
+		console.log(document.getElementsByTagName('*'));  // 获取文档所有元素
+
+		console.log(document.implementation.hasFeature('Core', '3.0'));
+
+
+		document.write('document.write');
+		document.write("<script src='documemt-write.js'>" + "<\/script>");
+        /**
+		 * 如果是在页面呈现过程中调用，会直接输出内容 如果文档加载结束后再调用，输出的内容会重写整个页面
+         */
+        window.onload = function() {
+//            document.write('window.onload document.writ');
+		};
+
+
+	</script>
+</body>
+</html>
+<!-- 呵呵 -->

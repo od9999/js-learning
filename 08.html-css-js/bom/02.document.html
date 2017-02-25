@@ -9,27 +9,6 @@
 	<title>Title</title>
 </head>
 <body>
-	<div id="div1">
-		<p id="p1">p1</p>
-		<p id="p2">p2 remove</p>
-	</div>
-
-	<div id="div2">div2 appendChild</div>
-	<div id="div3">div3 insertBefore</div>
-	<div id="div4">div4 insertBefore null</div>
-	<div id="div5">div5 replace</div>
-
-	<ul id="ul1">
-		<li>ul1 clone true</li>
-		<li>ul1 clone true</li>
-		<li>ul1 clone true</li>
-	</ul>
-	<ul id="ul2">
-		<li>ul2 clone false</li>
-		<li>ul2 clone false</li>
-		<li>ul2 clone false</li>
-	</ul>
-
 
 	<script>
 		/**
@@ -50,6 +29,11 @@
 		console.log(document.childNodes);
 
 		console.log(document.documentElement); // 指向html元素
+
+
+
+		console.log(document.domain); //不能将document.domain设置为URL中不包含得域 设置的值不能更“紧绷” 只能更“松散”
+
 
 	</script>
 </body>
