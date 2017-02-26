@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<!-- 呵呵 -->
+<!-- 呵呵 -->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<div id="div1" class="class1 class2 class3" title="div1 title" myattr="attr" style="color:red;">id div1</div>
+	<ul id="ul1">
+
+	</ul>
+
+
+	<script>
+		var div1 = document.getElementById('div1');
+		console.log(div1);
+		console.log(div1.nodeName);
+		console.log(div1.tagName);
+
+		console.log(Object.prototype.toString.call(div1));  // [object HTMLDivElement]
+
+		console.log(div1.id);
+        console.log(div1.className);
+        console.log(div1.title);
+        console.log(div1.lang);
+        console.log(div1.dir);
+        console.log(div1.style);
+
+
+        div1.className = 'div4';
+        console.log(div1.className);
+
+        console.log(div1.getAttribute('myattr'));
+        div1.setAttribute('myattr2', 'attr2');
+
+        var innerDiv = document.createElement('div');
+        innerDiv.id = 'div2';
+        innerDiv.appendChild(document.createTextNode('innerDiv'));
+
+        div1.appendChild(innerDiv);
+
+        console.log('---------');
+        /**
+		 * 使用fragment可以减少浏览器重绘重排
+         */
+		var fragment = document.createDocumentFragment();
+		var ul1 = document.getElementById('ul1');
+		var li = null;
+		for (var i = 0; i < 3; i++) {
+		    li = document.createElement('li');
+		    li.appendChild(document.createTextNode('li ' + i));
+			fragment.appendChild(li);
+		}
+        ul1.appendChild(fragment);
+
+
+	</script>
+</body>
+</html>
+<!-- 呵呵 -->
