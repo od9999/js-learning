@@ -6,30 +6,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>document title</title>
 </head>
 <body>
-	<div id="div1">
-		<p id="p1">p1</p>
-		<p id="p2">p2 remove</p>
-	</div>
-
-	<div id="div2">div2 appendChild</div>
-	<div id="div3">div3 insertBefore</div>
-	<div id="div4">div4 insertBefore null</div>
-	<div id="div5">div5 replace</div>
-
-	<ul id="ul1">
-		<li>ul1 clone true</li>
-		<li>ul1 clone true</li>
-		<li>ul1 clone true</li>
-	</ul>
-	<ul id="ul2">
-		<li>ul2 clone false</li>
-		<li>ul2 clone false</li>
-		<li>ul2 clone false</li>
-	</ul>
-
 
 	<script>
 		/**
@@ -50,7 +29,17 @@
 		console.log(document.childNodes);
 
 		console.log(document.documentElement); // 指向html元素
+		console.log(document.body); //  指向body元素
+		console.log(document.doctype);  //  指向<!DOCTYPE>
 
+		console.log(document.documentElement.hasChildNodes(document.body));
+
+		console.log(document.title);
+		document.title = 'aaa';
+
+		console.log(document.URL);       // 不能修改
+		console.log(document.domain);    // 能修改 比如用于跨域
+		console.log(document.referrer);  // 不能修改
 	</script>
 </body>
 </html>
