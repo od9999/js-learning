@@ -71,7 +71,6 @@ function getMaxSubArray(arr){
         cur = (cur < 0) ? 0 : cur;
     }
     return max;
-
 }
 
 

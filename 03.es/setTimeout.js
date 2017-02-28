@@ -5,6 +5,7 @@
 // setTimeout(fn, 2000, 'aaa', 'bbb');  // aaa bbb
 // setInterval(fn, 1000, 'ccc', 'ddd');  // ccc ddd
 
+
 setTimeout(function A(){
     console.log('A');
     setTimeout(function B() {
@@ -29,3 +30,14 @@ function add(index) {
 }
 
 setTimeout(add, 350, index);
+
+
+var timerId = setTimeout(function () {
+
+}, 1000);
+console.log(timerId);
+console.log('--------------');
+
+setTimeout(function () {
+	console.log(timerId);
+}, 1000);
