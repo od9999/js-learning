@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="description" content="不超过150个字符"/>
+	<meta name="keywords" content=""/>
+	<meta name="format-detection" content="telephone=no,email=no,address=no"/>
+	<title></title>
+	<link rel="stylesheet" href="./swiper-3.4.1.min.css">
+	<style>
+		.swiper-container {
+			width: 600px;
+			height: 300px;
+		}
+
+		.slide1 {
+			background-color: red;
+		}
+		.slide2 {
+			background-color: yellow;
+		}
+		.slide3 {
+			background-color: green;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide slide1">Slide 1</div>
+		<div class="swiper-slide slide2">Slide 2</div>
+		<div class="swiper-slide slide3">Slide 3</div>
+	</div>
+	<!-- 如果需要分页器 -->
+	<!--<div class="swiper-pagination"></div>-->
+
+	<!--&lt;!&ndash; 如果需要导航按钮 &ndash;&gt;-->
+	<!--<div class="swiper-button-prev"></div>-->
+	<!--<div class="swiper-button-next"></div>-->
+
+	<!--&lt;!&ndash; 如果需要滚动条 &ndash;&gt;-->
+	<!--<div class="swiper-scrollbar"></div>-->
+</div>
+
+<script src="./jquery-2.1.1.min.js"></script>
+<script src="./swiper-3.4.1.jquery.min.js"></script>
+
+<script>
+	$(function() {
+		var mySwiper = new Swiper ('.swiper-container', {
+			direction: 'vertical',
+//			loop: true,
+			autoplay: 1000
+
+			// 如果需要分页器
+//			pagination: '.swiper-pagination',
+
+			// 如果需要前进后退按钮
+//			nextButton: '.swiper-button-next',
+//			prevButton: '.swiper-button-prev',
+
+			// 如果需要滚动条
+//			scrollbar: '.swiper-scrollbar',
+		});
+	});
+
+</script>
+</body>
+</html>
