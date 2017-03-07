@@ -26,7 +26,7 @@
         console.log(document.getElementById('empty')); // null
 
         /**
-		 * HTMLCollection对象与NodeList对象类似，可以使用[]或者item()访问其中的项
+		 * HTMLCollection对象与NodeList对象类似，可以使用[]或者item()访问其中的项，类似的还有NamedNodeMap
 		 * 还有namedItem方法
          * @type {NodeList}
          */
@@ -49,6 +49,17 @@
 //            document.write('window.onload document.writ');
 		};
 
+
+		var divs = document.getElementsByTagName("div");
+		console.log(divs instanceof HTMLCollection);        //true  （chrome中返回false，divs是NodeList对象）
+
+		var div = document.getElementById("div1");
+
+		var children = div.childNodes;         //获取div元素子节点集合
+		console.log(children instanceof NodeList);   //true
+
+		var attrs = div.attributes;            //获取div元素的特性
+		console.log(attrs instanceof NamedNodeMap);  //true
 
 	</script>
 </body>

@@ -18,6 +18,9 @@
 
 <div id="id-out"></div>
 
+<div class="class1 class2">class1 class2</div>
+<div class="class1">class1</div>
+<div class="class2">class2</div>
 
 <script type="text/javascript">
     var outId = document.getElementById('id-out');
@@ -46,7 +49,9 @@
 
     console.log($out.get(0));
     console.log($out.eq(0));
+	console.log('-------------------');
 
+	console.log($('.class1.class2'));
 </script>
 </body>
 
