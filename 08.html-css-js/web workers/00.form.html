@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		var worker = new Worker('test.js');
+
+		/**
+		 * postMessage()参数是 任何可以被序列化的的值
+		 */
+		worker.postMessage({
+			type: 'command',
+			msg: 'test'
+		});
+
+	</script>
+</body>
+</html>
