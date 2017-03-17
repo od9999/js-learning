@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<form action="formAction1" method="get" id="form1" accept-charset="utf-8" name="formName1" target="_blank">
+		<input type="text" name="username" value="text">
+		<input type="password" name="password" value="password">
+		<div name="div1">div1 name</div>
+		<div>div</div>
+
+		<input type="button" name="button1" value="button">
+	</form>
+
+
+	<div>----------------</div>
+	<form action="formAction2" method="get" id="form2">
+		<input type="text" name="username" value="text">
+		<input type="password" name="password" value="password">
+		<br />
+		<!-- 下面3种都能提交表单 -->
+		<input type="submit" value="submit input">
+		<button type="submit">submit button</button>
+		<input type="image" src="../../resource/profile.png">
+		<br />
+		<!-- 下面2种都能重置表单 -->
+		<input type="reset" value="reset input">
+		<button type="reset">reset button</button>
+	</form>
+
+
+
+	<script>
+		var form1 = document.getElementById('form1');
+		console.log(form1.acceptCharset);
+		console.log(form1.action);
+		console.log(form1.elements);
+		console.log(form1.enctype);
+		console.log(form1.length);
+		console.log(form1.method);
+		console.log(form1.name);
+		console.log(form1.target);
+
+		form1.reset();	// 不是清空表单 如果value有值 变成那个值
+		form1.submit(); // 如果target="_blank" 新窗口打开
+
+
+		var forms = document.forms;
+		var form2 = document.getElementById('form2');
+		var form2ByForms1 = document.forms['form2'];
+		var form2ByForms2 = document.forms[1];
+
+		console.log('---------------------');
+		console.log(forms);
+		console.log(form2 === form2ByForms1);
+		console.log(form2 === form2ByForms2);
+
+		form2.addEventListener('submit', function (event) {
+			console.log('form2 submit event.preventDefault()');
+			event.preventDefault();
+		});
+
+		form2.addEventListener('reset', function (event) {
+			console.log('form2 reset event.preventDefault()');
+			event.preventDefault();
+		});
+
+
+
+
+
+
+	</script>
+</body>
+</html>

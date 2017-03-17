@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<form action="formAction1" method="get" id="form1" accept-charset="utf-8" name="formName1" target="_blank">
+		<input type="text" name="username" value="text">
+		<input type="text" name="username" value="text">
+		<input type="password" name="password" value="password" readonly>
+		<div name="div1">div1 name</div>
+		<div>div</div>
+		<input type="submit" name="button1" value="button">
+	</form>
+
+	<script>
+		var form1 = document.getElementById('form1');
+
+		/**
+		 * 每个表单字段在elements集合中的顺序，与它们出现在标记中的顺序相同
+		 * 可以按照位置和name特性来访问它们
+		 * 如果有多个表单控件都使用同一个name，那么form1.elements['xxx']返回name为xxx的NodeList
+		 */
+		console.log(form1.elements);
+		var usernameNodeList = form1.elements['username'];
+		var passwordInput = form1.elements['password'];
+
+		console.log(usernameNodeList);
+		console.log(passwordInput);
+
+		console.log(Object.prototype.toString.call(usernameNodeList));		// [object RadioNodeList]
+		console.log(Object.prototype.toString.call(passwordInput));			// [object HTMLInputElement]
+		console.log('----------------------');
+
+		/**
+		 * 表单控件共有的属性
+		 * disabled boolean 是否禁用
+		 * form 只读 指向所属表单的指针
+		 * name 表单控件的name
+		 * readOnly 是否只读
+		 * tabIndex 当前表单控件的切换(tab)序号
+		 * type
+		 * value 只读的 提交给服务器的值
+		 */
+		console.log(passwordInput.disabled);
+		console.log(passwordInput.form === form1);
+		console.log(passwordInput.name);
+		console.log(passwordInput.readOnly);
+		console.log(passwordInput.tabIndex);
+		console.log(passwordInput.type);
+		console.log(passwordInput.value);
+
+
+		/**
+		 * 防止重复提交表单
+		 * 如果给按钮添加了click事件 有的浏览器是先触发click，再触发submit(此时设置为disabled就不能提交数据了)，有的浏览器相反
+		 * 最好是通过submit事件提交按钮
+		 */
+		form1.addEventListener('submit', function (event) {
+			var target = event.target;
+			console.log(this === target); // true
+			var btn = target.elements['button1'];
+
+			btn.disabled = true;
+		});
+
+		/**
+		 * 表单控件共有的方法
+		 * focus()
+		 * blur()
+		 */
+		var usernameInput = form1.elements[0];
+		usernameInput.focus();
+		window.setTimeout(function() {
+			usernameInput.blur();
+		}, 2000);
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
