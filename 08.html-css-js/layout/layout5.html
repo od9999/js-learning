@@ -9,17 +9,17 @@
             padding: 0;
         }
 		.box-left{width:300px;height:300px;float:left;background:#AAA;}
-		.box-right{height:300px;margin-left:300px;background:#DDD;}
+		.box-right{height:300px;width:calc(100% - 300px);background:#DDD;float: right}
     </style>
 </head>
 <body>
 <!--第一种方法：左侧用margin-right，右侧float：right  就可以实现。-->
 <div class="box-left">
-	<a href="" target="_blank">我是龙恩</a>
+	box-left
 </div>
 
 <div class="box-right">
-	<a href="" target="_blank">我是龙恩</a>
+	box-right
 </div>
 </body>
 </html>

@@ -40,13 +40,15 @@ ES的操作符在应用对象时，通常会先调用对象的valueOf()或toStri
 
 
     
-    异步编程的4种方法
+## 异步编程的4种方法
+
 - 回调函数
 - 事件监听
 - 发布/订阅
 - Promises对象
 
 ##setTimeout()参数
+
 ```js
 function fn(a, b) {
     console.log('setTimout', a, b);
@@ -84,7 +86,9 @@ f.b   //undefined
     Number instanceof Function //true
     Number instanceof Number  // false
     ```
+    
 ##如何继承
+
 ```js
 function Parent() {
     this.name = 'aaa';
@@ -99,6 +103,7 @@ Child.prototype = new Parent();
 Child.prototype.__proto__ = Parent.prototype;
 Child.prototype = Object.create(Parent.prototype);
 Object.setPrototypeOf(Child.prototype, Parent.prototype);
+Reflect.setPrototypeOf(Child.prototype, Parent.prototype);
 util.inherits(Child, Parent);  //node中使用 
 ```
 
@@ -118,6 +123,8 @@ Child.prototype = Object.create(Parent.prototype);
 Child.prototype.__proto__ = Parent.prototype;
 // 或者
 Object.setPrototypeOf(Child.prototype, Parent.prototype);
+// 或者
+Reflect.setPrototypeOf(Child.prototype, Parent.prototype);
 // 或者 nodejs中util模块
 util.inherits(Child, Parent); //子类继承父类的原型上的方法
 ```
