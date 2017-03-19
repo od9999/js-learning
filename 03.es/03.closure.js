@@ -27,3 +27,10 @@ for (let i = 0; i < 10; i++) {
     };
 }
 arr3[3]();    // 3
+
+var arr = ['one', 'two', 'three'];
+for (var i = 0; i < arr.length; i++) {
+	setTimeout(function () {
+		console.log(arr[i]);     // undefined undefined undefined
+	}, i * 1000);
+}
