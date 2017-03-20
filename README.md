@@ -7,6 +7,7 @@
 - jquery proxy when
 - FileReader
 - 地域回调
+- 瀑布流
 
 计数器
 
