@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>localStorage</title>
+</head>
+<body>
+<script>
+	/**
+	 * 要访问同一个localStorage对象，页面必须来自同一个域名(子域名无效)，同一种协议，同一个端口
+	 * 大多数浏览器对每个来源(以相同的协议、域名、端口的页面为单位)有5MB的限制，Chrome、Safari有2.5M限制
+	 */
+	console.log(window.localStorage);
+	window.localStorage.setItem('keyLocal', 'valueLocal');
+</script>
+</body>
+</html>
