@@ -31,11 +31,11 @@ function createXMLHTTPRequest() {
 }
 
 // 发送get请求
-function get(){
+function get(url){
     var request = createXMLHTTPRequest();
     if(request){
         // 启动一个请求以备发送 而不是真正发送请求    true 表示异步 false 表示同步
-        request.open("GET", "http://test.com/?keywords=xxx", true);
+        request.open("GET", url, true);
         request.onreadystatechange = function(){
             /**
              * 0: 未初始化 未调用open()方法
@@ -44,9 +44,10 @@ function get(){
              * 3: 接受 已经收到部分响应
              * 4: 完成 已经收到全部响应，可以在客户端使用了
              */
-            if(request.readyState == 4){
+			if(request.readyState == 4){
                 if(request.status >= 200 && request.status < 300 || request.status == 304){
-                    console.log("success");
+                    console.log("get success-------");
+					console.log(request.responseText);
                 } else {
                     console.log("error");
                 }
@@ -58,17 +59,18 @@ function get(){
 
 
 // post请求
-function post(){
+function post(url){
     var request = createXMLHTTPRequest();
     if(request){
-        request.open("POST", "http://test.com/", true);
+        request.open("POST", url, true);
         request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8;");
         request.onreadystatechange = function() {
             if (request.readyState == 4) {
                 if (request.status >= 200 && request.status < 300 || request.status == 304) {
-                    alert("success");
+					console.log("post success-------");
+					console.log(request.responseText);
                 } else {
-                    alert("error");
+					console.log("error");
                 }
             }
         };

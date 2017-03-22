@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script>
+	var processor = {
+		timeoutId: null,
+
+		// 实际进行处理的方法
+		performProcessing: function () {
+			console.log(111);
+		},
+
+		process: function () {
+			window.clearTimeout(this.timeoutId);
+			var self = this;
+			self.timeoutId = setTimeout(function() {
+				self.performProcessing();
+			}, 300);
+		}
+	};
+
+	function throttle(func, context) {
+		window.clearTimeout(func.timeoutId);
+		func.timeoutId = setTimeout(function () {
+			func.call(context);
+		}, 300);
+	}
+
+	window.addEventListener('resize', function () {
+//		handler();
+		throttle(handler);
+
+	});
+	function handler() {
+		console.log(1);
+	}
+
+
+</script>
+</body>
+</html>
