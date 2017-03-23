@@ -47,12 +47,14 @@ function get(url){
 			if(request.readyState == 4){
                 if(request.status >= 200 && request.status < 300 || request.status == 304){
                     console.log("get success-------");
+					console.log(Object.prototype.toString.call(request.responseText));
 					console.log(request.responseText);
                 } else {
                     console.log("error");
                 }
             }
         };
+		request.setRequestHeader("Accept", "application/json");
         request.send(null);
     }
 }
@@ -68,12 +70,14 @@ function post(url){
             if (request.readyState == 4) {
                 if (request.status >= 200 && request.status < 300 || request.status == 304) {
 					console.log("post success-------");
+					console.log(Object.prototype.toString.call(request.responseText));
 					console.log(request.responseText);
                 } else {
 					console.log("error");
                 }
             }
         };
+		// request.setRequestHeader("Accept", "application/json");
         request.send("keywords=xxx"); // 发送给服务端的数据
 
     }

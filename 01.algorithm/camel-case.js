@@ -1,11 +1,12 @@
-let str = 'a_bc_cde_efgh';
+let str = 'a_bc_cde_efgh_b';
 
 const camelCaseFormat = (str) => {
-    let reg = /_./g;
+    let reg = /_[a-z]/g;
     let match = null;
     let temp = null;
     while(match = reg.exec(str)) {
         temp = match[0];
+		console.log(temp);
         str = str.replace(temp, temp.charAt(1).toUpperCase());
     }
     return str;
