@@ -4,7 +4,9 @@
  */
 let p1 = new Promise((resolve, reject) => {
 	setTimeout( () => {
+		console.log(1);
 		resolve('aaaaa');
+		console.log(2);
 	}, 1000);
 });
 
@@ -13,12 +15,15 @@ let p1 = new Promise((resolve, reject) => {
  */
 p1.then((value) => {
 	console.log(111);
-	console.log('p1 -------');
+	console.log('p1.then() resolve-------------');
 	console.log(value);
-	return '222';
+	// return 111;
+	return new Error('error');
 }).then((value) => {
-	console.log(333);
-	console.log('-------');
+	console.log('p1.then().then() resolve-------------');
 	console.log(value);
+}, (error) => {
+	console.log('p1.then().then() reject-------------');
+	console.error(error);
 
 });

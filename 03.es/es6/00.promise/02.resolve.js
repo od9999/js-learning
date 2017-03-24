@@ -2,11 +2,11 @@
  * resolve函数的参数除了正常的值以外，还可能是另一个Promise实例，
  * 表示异步操作的结果有可能是一个值，也有可能是另一个异步操作
   */
-var p1 = new Promise(function (resolve, reject) {
+var p1 = new Promise((resolve, reject) => {
 	console.log(111);
 	setTimeout(() => {
 		console.log(222);
-		resolve('p1');
+		resolve('p1 resolve');
 		// reject(new Error('p1 reject'));
 	}, 3000);
 });
