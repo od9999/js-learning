@@ -1,5 +1,10 @@
 // http://math.hws.edu/eck/jsdemo/sortlab.html 排序演示
 
+/**
+ * 平均情况O(nlog2n) 最好情况O(nlog2n) 最坏情况O(n^2) 不稳定
+ * @param arr
+ * @returns {*}
+ */
 const quickSort = (function func(arr){
     if(arr.length <= 1) {
         return arr;

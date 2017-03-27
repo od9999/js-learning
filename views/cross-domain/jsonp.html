@@ -16,10 +16,10 @@
     function jsonpCallback(result) {
         console.log(result)
     }
-    var JSONP = document.createElement("script");
-    JSONP.type = "text/javascript";
-    JSONP.src = "http://www.cross-domain.com:8080/json?callback=jsonpCallback";
-    document.getElementsByTagName("head")[0].appendChild(JSONP);
+    var jsonp = document.createElement("script");
+	jsonp.type = "text/javascript";
+	jsonp.src = "http://www.cross-domain.com:8080/json?callback=jsonpCallback";
+    document.getElementsByTagName("head")[0].appendChild(jsonp);
 </script>
 </body>
 </html>

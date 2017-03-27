@@ -1,3 +1,8 @@
+/**
+ * 平均情况O(n^2) 最好情况O(n) 最坏情况O(n^2) 稳定
+ * @param arr
+ * @returns {*}
+ */
 function bubbleSort(arr) {
     let temp = null;
     for(let i = 0, length = arr.length; i < length - 1; i++) {
