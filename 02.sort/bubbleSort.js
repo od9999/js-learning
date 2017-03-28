@@ -8,9 +8,6 @@ function bubbleSort(arr) {
     for(let i = 0, length = arr.length; i < length - 1; i++) {
         for(let j = i + 1; j < length; j++) {
             if(arr[i] > arr[j]) {
-                // temp = arr[i];
-                // arr[i] = arr[j];
-                // arr[j] = temp;
                 [arr[i], arr[j]] = [arr[j], arr[i]];
             }
         }
