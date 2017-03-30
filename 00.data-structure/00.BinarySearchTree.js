@@ -18,8 +18,7 @@ BST.prototype.insert = function (data) {
 	var n = new Node(data, null, null);
 	if (this.root == null) {
 		this.root = n;
-	}
-	else {
+	} else {
 		var current = this.root;
 		var parent;
 		while (true) {
@@ -30,8 +29,7 @@ BST.prototype.insert = function (data) {
 					parent.left = n;
 					break;
 				}
-			}
-			else {
+			} else {
 				current = current.right;
 				if (current == null) {
 					parent.right = n;
