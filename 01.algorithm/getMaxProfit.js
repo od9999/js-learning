@@ -23,9 +23,7 @@ function getMaxProfit2(arr) {
     let min = Math.min.apply(null, arr);
     let max = Math.max.apply(null, arr);
     console.log(min);
-    console.log(max)
-
-
+    console.log(max);
     return max - min;
 }
 console.log(getMaxProfit2([10,5,11,7,8,9]));
