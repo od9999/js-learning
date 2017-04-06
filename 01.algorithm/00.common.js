@@ -58,22 +58,5 @@ function getMaxDuplicateChar(str) {
 }
 console.log(getMaxDuplicateChar('afzzzzzzzzzzjghdfraazzzzzzzzzzzzaasdenas'));
 
-// 求最大子数组
-function getMaxSubArray(arr){
-    if(arr.length === 0){
-        return [];
-    }
-    let cur = 0;
-    let max = -Infinity;
-    for (let i = 0, length = arr.length; i < length; i++) {
-        cur += arr[i];
-        max = Math.max(max, cur);
-        cur = (cur < 0) ? 0 : cur;
-    }
-    return max;
-}
-
-
-console.log(getMaxSubArray([1, 2, -1, 6, -1]));
 
 
