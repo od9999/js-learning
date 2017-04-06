@@ -57,7 +57,6 @@ BST.prototype.inOrder = function (node) {
 	this._inOrder(this.root);
 };
 BST.prototype._inOrder = function (node) {
-
 	if (!(node == null)) {
 		this._inOrder(node.left);
 		console.log(node.show());

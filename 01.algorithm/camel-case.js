@@ -5,6 +5,7 @@ const camelCaseFormat = (str) => {
     let match = null;
     let temp = null;
     while(match = reg.exec(str)) {
+        console.log(match);
         temp = match[0];
 		console.log(temp);
         str = str.replace(temp, temp.charAt(1).toUpperCase());
