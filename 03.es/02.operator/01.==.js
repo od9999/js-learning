@@ -15,3 +15,8 @@ console.log(false == '');     // true
 console.log(NaN == false);    // false
 console.log(undefined == false);    // false
 console.log(null == false);    // false
+
+let obj = {
+	a: 1
+};
+console.log(obj.valueOf() === obj);
