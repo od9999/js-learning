@@ -24,6 +24,7 @@
 		}
 	};
 
+	// 去抖
 	function debounce(func, context) {
 		window.clearTimeout(func.timeoutId);
 		func.timeoutId = setTimeout(function () {
