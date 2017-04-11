@@ -6,7 +6,6 @@
 </head>
 <body>
 
-<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 <script>
 	var processor = {
 		timeoutId: null,
@@ -25,7 +24,7 @@
 		}
 	};
 
-	function throttle(func, context) {
+	function debounce(func, context) {
 		window.clearTimeout(func.timeoutId);
 		func.timeoutId = setTimeout(function () {
 			func.call(context);
@@ -34,7 +33,7 @@
 
 	window.addEventListener('resize', function () {
 //		handler();
-		throttle(handler);
+		debounce(handler);
 
 	});
 	function handler() {

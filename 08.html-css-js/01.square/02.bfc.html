@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.square {
+			width: 50%;
+			background-color: yellow;
+		}
+		.square:after {
+			content: '';
+			display: block;
+			background-color: yellow;
+			margin-top: 100%; /* margin 百分比相对父元素宽度计算 */
+		}
+
+		.square {
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="square"></div>
+
+</body>
+</html>
