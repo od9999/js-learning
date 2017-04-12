@@ -17,6 +17,16 @@ console.log(undefined == false);    // false
 console.log(null == false);    // false
 
 let obj = {
-	a: 1
+	a: 1,
+	valueOf: function() {
+		console.log('valueOf');
+		return 2;
+	},
+	toString: function () {
+        console.log('toString');
+		return 3;
+	}
 };
+console.log('------------------');
 console.log(obj.valueOf() === obj);
+console.log(obj == 2);

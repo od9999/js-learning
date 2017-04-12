@@ -1,6 +1,35 @@
+function Person(name, age) {
+	this.name = name;
+	this.age = age;
+}
+function Student(name, age, gender) {
+	Person.call(this, name, age);
+	this.gender = gender;
+}
+Person.prototype.sayHello = function () {
+	console.log("Hello, name: " + this.name + ' age: ' + this.age);
+};
+
 function extend(Child, Parent) {
-	var F = function(){};
+	var F = function () {};
 	F.prototype = Parent.prototype;
 	Child.prototype = new F();
-	Child.prototype.constructor = Child;
+	Object.defineProperty(Child.prototype, 'constructor', {
+		enumerable: false,
+		value: Child
+	});
 }
+extend(Student, Person);
+
+let p = new Person('person', 21);
+let s = new Student('student', 15, 'male');
+
+p.sayHello();
+s.sayHello();
+
+console.log(p.constructor);		// Person
+console.log(s.constructor);		// Student
+
+console.log(p instanceof Person);	// true
+console.log(s instanceof Person);	// true
+console.log(s instanceof Student);	// true

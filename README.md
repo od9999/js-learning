@@ -1,6 +1,7 @@
 ![profile](resource/profile.png)
 
 ## todo
+- 输入url 发生什么事情
 - 阻止按钮多次提交 节流函数
 - 专题url
 - hash表 散列表
