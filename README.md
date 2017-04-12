@@ -1,21 +1,5 @@
 ![profile](resource/profile.png)
 
-## todo
-- 输入url 发生什么事情
-- 阻止按钮多次提交 节流函数
-- 专题url
-- hash表 散列表
-- jquery proxy when
-- FileReader
-- 地域回调
-- 瀑布流
-
-计数器
-
-## 遇过的难题
-
-ajax请求 服务端php setCookie
-
 ## scrypt元素的defer async
 
 当浏览器碰到 script 脚本的时候：
