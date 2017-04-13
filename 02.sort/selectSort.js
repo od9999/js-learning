@@ -1,4 +1,4 @@
-function insertSort (arr) {
+function selectSort (arr) {
 	let minIndex;
 	for (let i = 0; i < arr.length - 1; i++) {
         minIndex = i;
@@ -14,4 +14,4 @@ function insertSort (arr) {
 	return arr;
 }
 
-console.log(insertSort([4, 9, 10, 7, -4]));
+console.log(selectSort([4, 9, 10, 7, -4]));

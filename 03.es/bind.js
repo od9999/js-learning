@@ -43,3 +43,22 @@ function test(a, b, c, d, e) {
 }
 
 console.log(test.bind(obj, 1, 2)(6,7,8,9));
+
+Function.prototype.bind = function(context, ...args) {
+    return (...argvs) => {
+        return this.apply(context, args.concat(argvs));
+    }
+};
+
+/**
+ * 函数可能是一个构造函数
+ */
+Function.prototype.bind = function(context, ...args) {
+    var self = this;
+    function temp(...argvs) {
+        return self.apply(context, args.concat(argvs));
+    }
+    temp.prototype = self.prototype;
+    return temp;
+};
+
