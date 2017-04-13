@@ -12,6 +12,6 @@ function out2(callback) {
 }
 
 var fn = out1();
-fn();
+fn();		// 2
 
-out2(fn);
+out2(fn);	// 2

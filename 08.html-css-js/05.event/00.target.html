@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#div {
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="div">
+		<button id="btn">this</button>
+	</div>
+
+	<script>
+		var btn = document.getElementById('btn');
+		var div = document.getElementById('div');
+		if (document.addEventListener) {
+			console.log('addEventListener=====================');
+			div.addEventListener('click', function(event) {
+				console.log('div click----------');
+				console.log(this);
+				console.log(event.target);
+				console.log(event.currentTarget);
+			}, false);
+			btn.addEventListener('click', function (event) {
+				console.log('btn click----------');
+				console.log(this);
+				console.log(event.target);
+				console.log(event.currentTarget);
+			}, false);
+		} else if (document.attachEvent) {
+			console.log('attachEvent=====================');
+			div.attachEvent('onclick', function(event) {
+				console.log('div click----------');
+				console.log(this);		// window
+				console.log(event.srcElement);
+				console.log(event.srcElement === div);
+			}, false);
+			btn.attachEvent('onclick', function (event) {
+				console.log('btn click----------');
+				console.log(this);		// window
+				console.log(event.srcElement);
+				console.log(event.srcElement === btn);
+			}, false);
+		}
+
+	</script>
+</body>
+</html>

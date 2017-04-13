@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<a href="http://localhost:63342/js-learning/08.html-css-js/06.back/01.page1.html?_ijt=q9euaa26qfubp0u3uehe2v7no1">page1</a>
+<script>
+	console.log(window.name);
+	if (window.name != "tempname") {
+		console.log(1);
+		location.reload();
+		window.name = "tempname";
+		console.log('after reload--------------------');
+	}
+	else {
+		console.log(2);
+		window.name = "";
+	}
+</script>
+</body>
+</html>
