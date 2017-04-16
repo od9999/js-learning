@@ -1,3 +1,9 @@
+## 同源策略会影响下面这些行为
+
+- Cookie、LocalStorage 和 IndexDB 无法读取。
+- DOM 无法获得。
+- AJAX 请求不能发送。
+
 ## CORS
 需要浏览器和服务器同时支持
 这里列出几个返回http中常见的几个CORS请求头：
