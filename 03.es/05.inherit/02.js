@@ -11,9 +11,7 @@ Person.prototype.sayHello = function () {
 };
 
 function extend(Child, Parent) {
-	var F = function () {};
-	F.prototype = Parent.prototype;
-	Child.prototype = new F();
+	Child.prototype = Object.create(Parent.prototype);
 	Object.defineProperty(Child.prototype, 'constructor', {
 		enumerable: false,
 		value: Child
