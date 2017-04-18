@@ -22,4 +22,4 @@ const quickSort = (function func(arr){
     return [].concat(func(leftArr), [pivot], func(rightArr));
 });
 
-console.log(quickSort2([4, 9, 7, -4, 10]));
+console.log(quickSort([4, 9, 7, -4, 10]));
