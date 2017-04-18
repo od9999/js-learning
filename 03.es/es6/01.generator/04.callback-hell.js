@@ -7,7 +7,7 @@ function task1(data) {
     setTimeout(() => {
         console.log('task1----------------');
         let a = 1;
-        let result1 = data + a
+        let result1 = data + a;
         console.log(result1);
         g.next(result1);
     }, 1000);
