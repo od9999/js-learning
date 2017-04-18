@@ -1,0 +1,34 @@
+const separateArray = (arr, func) => {
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start < end) {
+        while(start < end && !func(arr[start])) {
+            start++;
+        }
+        while (start < end && func(arr[end])) {
+            end--;
+        }
+        if(start < end) {
+            [arr[start], arr[end]] = [arr[end], arr[start]];
+        }
+    }
+    return arr;
+};
+
+const isEven = (num) => {
+    return (num & 1) === 0;
+};
+
+const isNegative = (num) => {
+    return num < 0;
+};
+
+const isPositive = (num) => {
+    return !isNegative(num);
+};
+
+
+console.log(separateArray([1, -3, 4, 8, -2, 8], isEven));
+console.log(separateArray([1, -3, 4, 8, -2, 8], isNegative));
+console.log(separateArray([1, -3, 4, 8, -2, 8], isPositive));
