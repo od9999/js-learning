@@ -59,4 +59,10 @@ function getMaxDuplicateChar(str) {
 console.log(getMaxDuplicateChar('afzzzzzzzzzzjghdfraazzzzzzzzzzzzaasdenas'));
 
 
+// 二叉树 给出中序、前序 找出后续
+
+// 链表从后到前 输出。栈 或 递归
+
+// 旋转数组的最小数字  [3, 4, 5 ,1 ,2]的最小数字是1
+// 两个指针index1 = 0 index2 = length - 1 二分查找 不断改变index1和index2最后 index2就是找到的值
 
