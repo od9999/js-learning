@@ -16,3 +16,12 @@ console.log(typeof result);
 console.log(14 ^ 9);    // 7
 console.log(0b1 ^ 0);
 console.log(0b11 ^ 0);
+
+console.log(8 ^ 8);
+
+const arr = [5, 2, 2, 8, 4, 5, 6, 4, 5, 6, 8];
+let res = arr[0];
+for(let i = 1; i < arr.length; i++) {
+	res ^= arr[i];
+}
+console.log(res);
