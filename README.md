@@ -3,12 +3,30 @@
 ## scrypt元素的defer async
 
 当浏览器碰到 script 脚本的时候：
-1. <script src="script.js"></script>
-没有 defer 或 async，浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。
-2. <script async src="script.js"></script>
-有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。
-3. <script defer src="myscript.js"></script>
-有 defer，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成。
+
+- 没有 defer 或 async
+
+```javascript
+<script src="script.js"></script>
+```
+
+浏览器会立即加载并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行。
+
+- 有 async
+
+```javascript
+<script async src="script.js"></script>
+```
+
+加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。
+
+- 有 defer
+
+```javascript
+<script defer src="myscript.js"></script>
+```
+
+，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），但是 script.js 的执行要在所有元素解析完成之后，DOMContentLoaded 事件触发之前完成。
 ![profile](resource/async-defer.png)
 此图告诉我们以下几个要点：
     1. defer 和 async 在网络读取（下载）这块儿是一样的，都是异步的（相较于 HTML 解析）

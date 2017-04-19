@@ -25,7 +25,7 @@ var currying = function (fn) {
         }
         [].push.apply(_args, [].slice.call(arguments));
         return arguments.callee;
-    }
+    };
 };
 
 var adder = function () {
@@ -38,7 +38,7 @@ var adder = function () {
         }
         [].push.apply(_args, [].slice.call(arguments));
         return arguments.callee;
-    }
+    };
 };
 var sum = adder();
 console.log(sum);     // [Function]

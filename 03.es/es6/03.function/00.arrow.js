@@ -1,14 +1,3 @@
-var Person = function (name, age) {
-    this.name = name;
-    this.age = age;
-};
-console.log(Person.prototype);
-console.log(Person.prototype.__proto__ === Object.prototype);
-let p = new Person('od', 13);
-
-console.log(p.name);
-console.log(p.age);
-console.log('-------------');
 
 /**
  * 箭头函数有几个使用注意点。
@@ -18,7 +7,9 @@ console.log('-------------');
  （4）不可以使用yield命令，因此箭头函数不能用作Generator函数。
  * @param a
  */
-var arrow = a => a + 1;
+var arrow = a => {
+    return a + 1;
+};
 console.log(arrow.prototype);   // undefined
 
 let obj = {
@@ -43,10 +34,23 @@ let obj2 = {
     },
 
     // 箭头函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
-    getNameArrow: () => this.name
+    getNameArrow: () => {
+        console.log(this);      // node文件中是{} repl是global 浏览器环境中是window
+        return this.name;
+    },
+
+    getNameArrow2: function() {
+        const say = () => {
+            return this.name;
+        };
+        console.log(this === obj2); // true
+        return say();
+    }
 };
 
 console.log(obj2.getName());        // od
 console.log(obj2.getNameArrow());   // undefined
+console.log(obj2.getNameArrow2());   // od
+
 
 

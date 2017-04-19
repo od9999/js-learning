@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<!-- 呵呵 -->
+<!-- 呵呵 -->
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		function onloadHandler() {
+		    console.log('onload');
+		}
+		var script = document.createElement('script');
+		script.src = 'documemt-write.js';
+		script.onload = function() {
+            onloadHandler();
+		};
+		document.body.appendChild(script);
+	</script>
+</body>
+</html>
+<!-- 呵呵 -->

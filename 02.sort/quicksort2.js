@@ -10,7 +10,7 @@ const getPivotIndex = (arr, start, end) => {
 		}
 		arr[end] = arr[start];
 	}
-	arr[start] = pivot
+	arr[start] = pivot;
 	return start;
 };
 
