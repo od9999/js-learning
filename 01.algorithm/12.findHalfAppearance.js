@@ -11,7 +11,7 @@ const findHalfAppearance = (arr) => {
 	let times = 1;
 	for(let i = 1; i < arr.length; i++) {
 		if(times === 0) {
-			result = arr[i]
+			result = arr[i];
 			times = 1;
 		} else if(result === arr[i]) {
 			times++;
