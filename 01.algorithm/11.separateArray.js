@@ -1,12 +1,12 @@
-const separateArray = (arr, func) => {
+const separateArray = (arr, separateBy) => {
     let start = 0;
     let end = arr.length - 1;
 
     while (start < end) {
-        while(start < end && !func(arr[start])) {
+        while(start < end && !separateBy(arr[start])) {
             start++;
         }
-        while (start < end && func(arr[end])) {
+        while (start < end && separateBy(arr[end])) {
             end--;
         }
         if(start < end) {

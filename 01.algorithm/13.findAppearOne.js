@@ -40,8 +40,6 @@ const findAppearOne2 = (arr) => {
 		}
 	}
 	return [findAppearOne(leftArr), findAppearOne(rightArr)];
-
-
 };
 
 const arr2 = [3, 5, 2, 2, 8, 4, 5, 6, 4, 5, 6, 8];

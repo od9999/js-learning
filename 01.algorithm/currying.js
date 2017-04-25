@@ -3,7 +3,7 @@
 const add = function(x) {
     return function(y) {
         return x + y;
-    }
+    };
 };
 
 const increment = add(1);

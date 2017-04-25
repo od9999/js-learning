@@ -9,7 +9,9 @@
  * @returns {number}
  */
 function Fibonacci (n) {
-    if ( n <= 1 ) {return 1};
+    if ( n <= 1 ) {
+		return 1
+    }
 
     return Fibonacci(n - 1) + Fibonacci(n - 2);
 }

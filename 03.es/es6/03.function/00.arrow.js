@@ -28,6 +28,7 @@ let obj = {
 console.log(obj.getThis() === obj);         // true
 console.log(obj.getThisArrow() === obj);    // false
 console.log(obj.getThisArrow() === this);    // true, 浏览器中是window
+console.log(obj.getThisArrow());    // {}
 console.log(this);    // {}
 
 console.log('------------');
