@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<ul id="ul">
+	<li>第1个</li>
+	<li>第2个</li>
+	<li>第3个</li>
+</ul>
+
+<script>
+	var ul = document.getElementById('ul');
+	var liChildNodes = ul.getElementsByTagName('li');
+
+	ul.addEventListener('click', function(event) {
+		var li = event.target;
+		if(li.nodeName.toLowerCase() === 'li') {
+			console.log(1 + Array.prototype.indexOf.call(liChildNodes, li));
+		} else {
+			console.log(-1);
+		}
+	}, false);
+</script>
+</body>
+</html>
