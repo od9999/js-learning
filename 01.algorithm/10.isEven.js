@@ -7,4 +7,7 @@ const isEven = (num) => {
 console.log(isEven(1));
 console.log(isEven(4));
 
+console.log(isEven(-3));
+console.log(isEven(-4));
 
+console.log(isEven(-0));
