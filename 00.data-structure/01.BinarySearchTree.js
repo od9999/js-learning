@@ -112,10 +112,17 @@ class BST {
 		let queue = [this.root];
 		let curLevelCount = 1,
 			nextLevelCount = 0;
+		let flag = false;
+		console.log(this.root.show());
 		while (queue.length !== 0) {
 			let curNode = queue.shift();
+			if(flag) {
+				console.log(curNode.show());
+				flag = false;
+			}
+
 			curLevelCount--;
-			console.log(curNode.show());
+
 			if (curNode.left !== null) {
 				queue.push(curNode.left);
 				nextLevelCount++;
@@ -125,6 +132,7 @@ class BST {
 				nextLevelCount++;
 			}
 			if (0 == curLevelCount) {
+				flag = true;
 				curLevelCount = nextLevelCount;
 				nextLevelCount = 0;
 			}
@@ -156,3 +164,6 @@ tree.postOrder();
 
 console.log('leverOrder--------');
 tree.leverOrder();
+
+console.log('leverOrderFirstOne--------');
+tree.leverOrderFirstOne();
