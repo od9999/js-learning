@@ -41,7 +41,7 @@ BST.prototype.insert = function (data) {
 };
 
 //调用两次递归遍历二叉树
-BST.prototype.preOrder = function (node) {
+BST.prototype.preOrder = function () {
 	this._preOrder(this.root);
 };
 BST.prototype._preOrder = function (node) {
@@ -53,7 +53,7 @@ BST.prototype._preOrder = function (node) {
 };
 
 //调用两次递归遍历二叉树
-BST.prototype.inOrder = function (node) {
+BST.prototype.inOrder = function () {
 	this._inOrder(this.root);
 };
 BST.prototype._inOrder = function (node) {
@@ -65,7 +65,7 @@ BST.prototype._inOrder = function (node) {
 };
 
 //调用两次递归遍历二叉树
-BST.prototype.postOrder = function (node) {
+BST.prototype.postOrder = function () {
 	this._postOrder(this.root);
 };
 BST.prototype._postOrder = function (node) {

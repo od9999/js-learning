@@ -58,7 +58,7 @@ class BST {
 	}
 
 	//调用两次递归遍历二叉树
-	preOrder (node) {
+	preOrder () {
 		this._preOrder(this.root);
 	}
 
@@ -71,7 +71,7 @@ class BST {
 	}
 
 	//调用两次递归遍历二叉树
-	inOrder (node) {
+	inOrder () {
 		this._inOrder(this.root);
 	}
 	_inOrder(node) {
@@ -83,7 +83,7 @@ class BST {
 	}
 
 	//调用两次递归遍历二叉树
-	postOrder (node) {
+	postOrder () {
 		this._postOrder(this.root);
 	}
 	_postOrder (node) {
@@ -93,6 +93,45 @@ class BST {
 			console.log(node.show());
 		}
 	}
+
+	leverOrder() {
+		let queue = [this.root];
+		while (queue.length !== 0) {
+			let curNode = queue.shift();
+			console.log(curNode.show());
+			if (curNode.left !== null) {
+				queue.push(curNode.left);
+			}
+			if (curNode.right !== null) {
+				queue.push(curNode.right);
+			}
+		}
+	}
+
+	leverOrderFirstOne() {
+		let queue = [this.root];
+		let curLevelCount = 1,
+			nextLevelCount = 0;
+		while (queue.length !== 0) {
+			let curNode = queue.shift();
+			curLevelCount--;
+			console.log(curNode.show());
+			if (curNode.left !== null) {
+				queue.push(curNode.left);
+				nextLevelCount++;
+			}
+			if (curNode.right !== null) {
+				queue.push(curNode.right);
+				nextLevelCount++;
+			}
+			if (0 == curLevelCount) {
+				curLevelCount = nextLevelCount;
+				nextLevelCount = 0;
+			}
+		}
+	}
+
+
 }
 
 let tree = new BST();
@@ -114,3 +153,6 @@ console.log('preOrder--------');
 tree.preOrder();
 console.log('postOrder--------');
 tree.postOrder();
+
+console.log('leverOrder--------');
+tree.leverOrder();
