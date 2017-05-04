@@ -41,6 +41,11 @@
 		console.log(document.domain);    // 能修改 比如用于跨域 不能将document.domain设置为URL中不包含得域 设置的值不能更“紧绷” 只能更“松散”
 		console.log(document.referrer);  // 不能修改
 
+		document.onreadystatechange = function () {
+			console.log('-------------');
+			console.log(document.readyState);
+		};
+
 	</script>
 </body>
 </html>
