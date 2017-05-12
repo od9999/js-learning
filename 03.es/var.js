@@ -1,3 +1,7 @@
+/**
+ * 当使用var声明一个变量时，创建的这个属性时不可配置的(不能使用delete运算符删除)
+ *
+ */
 var a, b = 1;
 console.log(a);    // undefined
 console.log(b);    // 1
@@ -17,3 +21,4 @@ arr[100] = 10;
 console.log(arr.length);  // 101
 console.log(Object.keys(arr));  // [ '0', '1', '2', '100' ]
 console.log('54' in arr);    // false
+
