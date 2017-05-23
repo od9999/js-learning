@@ -36,8 +36,11 @@
     console.log('--------------');
     var $out = $('.out');
     var $outId = $('#id-out');
+    var $outId2 = $('#id-out');
+
     console.log($out);
     console.log($outId);
+    console.log($outId === $outId2);
 
     var $in = $('.in', $out);
     var $in1 = $('.in', $outId);

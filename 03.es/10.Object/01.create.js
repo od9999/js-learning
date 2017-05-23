@@ -4,7 +4,6 @@
  （这些属性描述符的结构与Object.defineProperties()的第二个参数一样）。
  注意：该参数对象不能是 undefined，另外只有该对象中自身拥有的可枚举的属性才有效，
  也就是说该对象的原型链上属性是无效的。
- * @type {obj}
  */
 let o = Object.create(null);
 
