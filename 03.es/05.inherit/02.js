@@ -16,6 +16,8 @@ function extend(Child, Parent) {
 		enumerable: false,
 		value: Child
 	});
+
+	// 还有构造函数上的静态属性的继承  递归/for in 复制
 }
 extend(Student, Person);
 
