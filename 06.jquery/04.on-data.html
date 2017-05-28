@@ -22,6 +22,11 @@
             height: 100px;
             background-color: yellow;
         }
+        .div3{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -30,6 +35,9 @@
     </div>
     <div class="div2">
         div2
+    </div>
+    <div class="div3">
+        div3
     </div>
 <script src="jquery-2.1.1.min.js"></script>
 <script>
@@ -50,6 +58,13 @@
             console.log(event.data);    // undefined
         });
         $('.div2').trigger('click', [1, 2, [3, 4]]);
+
+        var $div3 = $('.div3');
+        var EVENT_NAME = 'custom-event';
+        $div3.on(EVENT_NAME, function() {
+            console.log(EVENT_NAME + ' handler');
+        });
+        $div3.trigger(EVENT_NAME);
     });
 </script>
 </body>

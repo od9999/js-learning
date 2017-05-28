@@ -38,57 +38,6 @@
         return item > 1;
     });
     console.log(arr2);
-    console.log('----------------------');
-
-    var empty = {
-        validate: 1,
-        limit: 2,
-        name: "zr"
-    };
-    var empty2 = {
-        validate: 1,
-        limit: 2,
-        name: "zr"
-    };
-    var defaults = {
-        validate: false,
-        limit: 5,
-        name: "foo",
-        obj: {
-            attr1: 1
-        },
-        sayHello: function() {
-            console.log('hello');
-        }
-    };
-    var options = {
-        validate: true,
-        name: "bar",
-        obj: {
-            attr2: 2
-        }
-    };
-    // 多个参数的情况
-    var settings = $.extend(empty, defaults, options); // 后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。
-    console.log(settings);
-
-    // 多个参数的情况
-    var settings2 = $.extend(true, empty2, defaults, options); // 后面的参数如果和前面的参数存在相同的名称，那么后面的会覆盖前面的参数值。
-    console.log(settings2);
-    console.log('----------------------');
-    // 一个参数的情况
-    $.extend({
-        study: function() {
-            console.log('study');
-        }
-    });
-    $.study();
-    console.log('----------------------');
-    $.fn.test = function() {
-    console.log('test');
-    };
-    $('.div1').test();
-    console.log('----------------------');
 
 
 </script>
