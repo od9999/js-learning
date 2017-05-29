@@ -22,3 +22,11 @@ console.log(arr.length);  // 101
 console.log(Object.keys(arr));  // [ '0', '1', '2', '100' ]
 console.log('54' in arr);    // false
 
+
+function test(a) {
+    console.log(a);
+    var a = 2;
+    console.log(a);
+}
+
+test(1);

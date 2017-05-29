@@ -33,3 +33,5 @@ console.log(s.constructor);		// Student
 console.log(p instanceof Person);	// true
 console.log(s instanceof Person);	// true
 console.log(s instanceof Student);	// true
+
+module.exports = extend;
