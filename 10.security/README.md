@@ -38,3 +38,7 @@ http://sec.chinabyte.com/382/12922382.shtml
 　　WiFi 强制断线
 
 　　WLAN 基站钓鱼
+
+
+# 类型
+DDoS
