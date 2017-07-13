@@ -7,27 +7,40 @@
  * 4.返回值是 Promise (async函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而await命令就是内部then命令的语法糖。)
  */
 
-function sayHello() {
-	return 'hello';
-}
+const sayHello = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('hello');
+		}, 1000);
+	});
+};
 
-function sayHi() {
-	return 'hi';
-}
+const sayHi = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+        	resolve('hi');
+    	}, 1000);
+	});
+};
 
-async function test() {
+const test = async () => {
 	console.log(111);
 	let hello = await sayHello();
+	console.log(hello);
 	console.log(222);
-	let hello = await sayHello();
+	let hi = await sayHi();
+    console.log(hi);
 	console.log(333);
 	return 'test';
-}
+};
+let p = test();
+console.log(Object.prototype.toString.call(p));
+console.log(p instanceof Promise);
 console.log(444);
 
-test().then(function (value) {
+p.then(function (value) {
 	console.log(value);
 });
 
-
+console.log(555);
 
