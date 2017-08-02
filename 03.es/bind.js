@@ -62,11 +62,3 @@ Function.prototype.bind = function(context, ...args) {
     return temp;
 };
 
-(function() {
-    console.log(1);
-})()
-
-(function() {
-    console.log(2);
-})()
-
