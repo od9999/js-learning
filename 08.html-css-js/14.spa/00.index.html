@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>
+        <a href="#url1">url1</a>
+    </li>
+    <li>
+        <a href="#url2">url2</a>
+    </li>
+    <li>
+        <a href="#url3">url3</a>
+    </li>
+</ul>
+<div id="conment"></div>
+<script src="../jquery-2.1.1.min.js"></script>
+<script>
+    console.log($);
+
+    window.addEventListener('hashchange', function (event) {
+        var hash = document.location.hash;
+        switch (hash) {
+            case '#url1':
+                $.ajax({
+                    url:'./data/url1.json',
+                    success: function (data) {
+                        document.getElementById('conment').innerHTML = data.value;
+                    }
+                });
+                break;
+            case '#url2':
+                $.ajax({
+                    url:'./data/url2.json',
+                    success: function (data) {
+                        document.getElementById('conment').innerHTML = data.value;
+                    }
+                });
+                break;
+            case '#url3':
+                $.ajax({
+                    url:'./data/url3.json',
+                    success: function (data) {
+                        document.getElementById('conment').innerHTML = data.value;
+                    }
+                });
+                break;
+            default:
+                break;
+        }
+    });
+</script>
+
+</body>
+</html>
