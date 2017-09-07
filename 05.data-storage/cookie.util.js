@@ -1,5 +1,5 @@
 var CookieUtil = {
-    get : function(name){
+    get: function(name){
         var cookieName = encodeURIComponent(name) + "=",
             cookieStart = document.cookie.indexOf(cookieName),
             cookieValue = null;
@@ -14,7 +14,7 @@ var CookieUtil = {
         return cookieValue;
     },
 
-    set : function(name, value, expires, path, domain, secure){
+    set: function(name, value, expires, path, domain, secure){
         var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
         if(expires instanceof Date){
             cookieText += ";expires=" + expires.toGMTString();
@@ -31,7 +31,7 @@ var CookieUtil = {
         document.cookie = cookieText;
     },
 
-    unset : function(name, path, domain, secure){
+    unset: function(name, path, domain, secure){
         this.set(name, "", new Date(0), path, domain, secure);
     }
 };
