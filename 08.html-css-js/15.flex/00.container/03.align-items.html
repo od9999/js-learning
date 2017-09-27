@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .item {
+            border: 1px solid red;
+        }
+        .item:nth-child(1) {
+            width: 20px;
+            height: 30px;
+        }
+        .item:nth-child(2) {
+            width: 20px;
+            height: 20px;
+        }
+        .item:nth-child(3) {
+            width: 20px;
+            height: 40px;
+        }
+        div[class^="container"] {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            border: 1px solid greenyellow;
+        }
+        .container-flex-start {
+            align-items: flex-start;
+        }
+        .container-flex-end {
+            align-items: flex-end;
+        }
+        .container-center {
+            align-items: center;
+        }
+        .container-baseline {
+            align-items: baseline;
+        }
+        .container-stretch {
+            align-items: stretch;
+            /*如果项目未设置高度或设为auto，将占满整个容器的高度*/
+        }
+
+    </style>
+</head>
+<body>
+align-items属性定义项目在交叉轴上如何对齐。
+align-items: flex-start | flex-end | center | baseline | stretch;
+
+    <div class="container-flex-start">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-flex-end">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-center">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-baseline">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-stretch">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>

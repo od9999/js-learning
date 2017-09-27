@@ -38,13 +38,14 @@
 		var ul1Node = document.getElementById('ul1');
 		var ul2Node = document.getElementById('ul2');
 
+		console.log(div1Node.contains(p1Node));
 
 		/**
 		 * 返回新增的节点
 		 * 如果新增的节点已经是文档的一部分，那node的位置会得到更新
 		 */
 		var appendNode = div1Node.appendChild(div2Node); //
-		console.log(div2Node === div2Node);
+		console.log(appendNode === div2Node);
 
 		/**
 		 * 参数: 要插入的节点，参照的节点

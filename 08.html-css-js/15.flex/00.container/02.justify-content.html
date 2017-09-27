@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .item {
+            width: 20px;
+            height: 20px;
+            border: 1px solid red;
+        }
+        div[class^="container"] {
+            display: flex;
+            width: 100px;
+            border: 1px solid greenyellow;
+        }
+        .container-flex-start {
+            justify-content: flex-start;
+        }
+        .container-flex-end {
+            justify-content: flex-end;
+        }
+        .container-center {
+            justify-content: center;
+        }
+        .container-space-between {
+            justify-content: space-between;
+        }
+        .container-space-around {
+            justify-content: space-around;
+        }
+
+    </style>
+</head>
+<body>
+justify-content属性定义了项目在主轴上的对齐方式。
+justify-content: flex-start | flex-end | center | space-between | space-around;
+
+    <div class="container-flex-start">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-flex-end">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-center">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-space-between">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <div class="container-space-around">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>

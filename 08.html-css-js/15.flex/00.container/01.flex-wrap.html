@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .item {
+            width: 20px;
+            height: 20px;
+            border: 1px solid red;
+        }
+        div[class^="container"] {
+            display: flex;
+            width: 100px;
+            border: 1px solid greenyellow;
+        }
+        .container-nowrap {
+            flex-wrap: nowrap;
+        }
+
+        .container-wrap {
+            flex-wrap: wrap;
+        }
+
+        .container-wrap-reverse {
+            flex-wrap: wrap-reverse;
+        }
+
+    </style>
+</head>
+<body>
+flex-direction默认情况下，项目都排在一条线（又称"轴线"）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
+flex-wrap: nowrap | wrap | wrap-reverse;
+
+    <div class="container-nowrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="container-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="container-wrap-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+
+</body>
+</html>
