@@ -1,7 +1,7 @@
 /**
  * 假如一个数组，除了其中1个数，其他每个数都出现了偶数次，找到这个数
  */
-const findAppearOne = (arr) => {
+const findAppearOne = arr => {
 	let result = arr[0];
 	for(let i = 1; i < arr.length; i++) {
 		result ^= arr[i];
@@ -15,7 +15,7 @@ console.log(findAppearOne(arr));
 /**
  * 假如一个数组，除了其中2个数，其他每个数都出现了偶数次，找到这2个数
  */
-const findAppearOne2 = (arr) => {
+const findAppearOne2 = arr => {
 	const temp = findAppearOne(arr);
 	const binarySumStr = temp.toString(2);
 

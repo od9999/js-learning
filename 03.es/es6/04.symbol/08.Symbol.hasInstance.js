@@ -7,8 +7,6 @@ const obj = {
 
 console.log([1, 2, 3] instanceof obj);
 
-
-
 class Even {
     static [Symbol.hasInstance](obj) {
         return Number(obj) % 2 === 0;
