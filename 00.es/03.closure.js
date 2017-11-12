@@ -9,10 +9,8 @@ arr1[6](); // 10
 
 var arr2 = [];
 for (var i = 0; i < 10; i++) {
-    arr2[i] = (function(num){
-        return function () {
-            console.log(num);
-        };
+    arr2[i] = (num => () => {
+        console.log(num);
     })(i);
 }
 

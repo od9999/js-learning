@@ -23,10 +23,11 @@ function f2(thunk) {
 const Thunk = function (fn) {
     return  (...args) => {
         return function (callback) {
-            return fn.call(this, ...args, callback);
+            return fn.call(null, ...args, callback);
         };
     };
 };
+const Thunk2 = fn => (...args) => callback => fn.call(null, ...args, callback);
 
 function func(a, cb) {
     cb(a);
