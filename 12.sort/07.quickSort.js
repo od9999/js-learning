@@ -24,8 +24,6 @@ const _quickSort = (arr, start, end) => {
 };
 
 
-const quickSort = (arr) => {
-	return _quickSort(arr, 0, arr.length - 1);
-};
+const quickSort = arr => _quickSort(arr, 0, arr.length - 1);
 
 console.log(quickSort([4, 9, 7, -4, 10]));
