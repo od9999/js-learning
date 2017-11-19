@@ -1,5 +1,5 @@
 function countingSort(arr, maxValue) {
-    var bucket = new Array(maxValue+1),
+    var bucket = new Array(maxValue + 1),
         sortedIndex = 0;
         arrLen = arr.length,
         bucketLen = maxValue + 1;
