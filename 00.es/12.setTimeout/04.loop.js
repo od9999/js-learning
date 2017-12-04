@@ -1,20 +1,21 @@
 const loop = (() => {
     let timerId;
+    const stopLoop = () => clearTimeout(timerId);
     return {
         on(fn, interval) {
             clearTimeout(timerId);
             timerId = setTimeout(function _func() {
-                fn();
-                setTimeout(_func, interval);
+                timerId = setTimeout(_func, interval);
+                fn(stopLoop);
             }, interval);
-        },
-        off() {
-            clearTimerout(timerId);
         }
     };
 })();
 
 let counter = 0;
-loop.on(() => {
+loop.on(stopLoop => {
+    if (counter === 2) {
+        stopLoop();
+    }
     console.log(counter++);
 }, 1000);
