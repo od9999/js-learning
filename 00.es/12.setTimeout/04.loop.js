@@ -1,21 +1,33 @@
-const loop = (() => {
-    let timerId;
-    const stopLoop = () => clearTimeout(timerId);
-    return {
-        on(fn, interval) {
-            clearTimeout(timerId);
-            timerId = setTimeout(function _func() {
-                timerId = setTimeout(_func, interval);
-                fn(stopLoop);
-            }, interval);
-        }
-    };
-})();
+class Loop {
+    constructor(fn, interval) {
+        this.fn = fn;
+        this.interval = interval;
+        this.timerId = null;
+        this.on();
+    }
+    on() {
+        const self = this;
+        const interval = self.interval;
+        clearTimeout(this.timerId);
+        const stop = () => clearTimeout(self.timerId);
+
+        self.timerId = setTimeout(function func() {
+            self.timerId = setTimeout(func, interval);
+            self.fn(stop);
+        }, interval);
+    }
+    stop() {
+        clearTimeout(this.timerId);
+    }
+}
 
 let counter = 0;
-loop.on(stopLoop => {
-    if (counter === 2) {
-        stopLoop();
+const loop = new Loop(stop => {
+    if (counter === 4) {
+        stop();
     }
     console.log(counter++);
 }, 1000);
+setTimeout(() => {
+    loop.stop();
+}, 3000)

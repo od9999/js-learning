@@ -45,4 +45,5 @@ const _quickSortKMax = (arr, low, high, k) => {
 
 const findMaxK = (arr, k) => _quickSortKMax(arr, 0, arr.length - 1, arr.length - k);
 
-console.log(findMaxK([1, 4, -3, 9, 7], 1));
+//  9, 7, 4 , 1, -3
+console.log(findMaxK([1, 4, -3, 9, 7], 5));

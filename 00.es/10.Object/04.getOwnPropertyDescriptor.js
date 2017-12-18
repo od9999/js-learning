@@ -13,7 +13,7 @@ let obj2 = {
     }
 };
 
-let obj3= {
+let obj3 = {
     x: 1,
     _y: 2,
     set y(value) {

@@ -19,20 +19,20 @@
  */
 
 // 纯函数
-const add10 = (a) => a + 10;
+const add10 = a => a + 10;
 
 // 依赖于外部变量的非纯函数
 let x = 10;
-const addx = (a) => a + x;
+const addx = a => a + x;
 
 // 会产生副作用的非纯函数
-const setx = (v) => x = v;
+const setx = v => x = v;
 
 /**
  * 2.函数组合
  */
-const add1 = (a) => a + 1;
-const times2 = (a) => a * 2;
+const add1 = a => a + 1;
+const times2 = a => a * 2;
 const compose = (a, b) => (c) => a(b(c));
 const add1OfTimes2 = compose(add1, times2);
 console.log(add1OfTimes2(5)); // 11

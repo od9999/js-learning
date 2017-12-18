@@ -9,5 +9,5 @@
 const sameSign = (a, b) => (a === 0 && b === 0) ? (1 / a === 1 / b) : ((a ^ b) >= 0);
 
 console.log(sameSign(1, -1));
-console.log(sameSign(+0, -0));  // true
+console.log(sameSign(+0, -0));  // false
 console.log(sameSign(-0, -0));  // true

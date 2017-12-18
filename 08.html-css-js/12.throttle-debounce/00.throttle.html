@@ -16,7 +16,7 @@
 				action.apply(context, arguments);
 				last = curr;
 			}
-		}
+		};
 	}
 
 	window.addEventListener('resize', throttle(300, handler, window), false);

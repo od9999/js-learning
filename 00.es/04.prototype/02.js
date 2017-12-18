@@ -11,10 +11,10 @@ test.prototype = {
 };
 console.log(Object.keys(test));
 
-Object.defineProperty(test, 'prototype', {
-	enumerable: true,
-	value: {
-		a: 222
-	}
-});
+// Object.defineProperty(test, 'prototype', {
+// 	enumerable: true,
+// 	value: {
+// 		a: 222
+// 	}
+// });
 console.log(Object.keys(test));

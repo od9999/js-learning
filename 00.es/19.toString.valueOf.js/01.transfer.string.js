@@ -27,5 +27,5 @@ const obj2 = {
         return {};
     }
 };
-
-console.log(obj2 + '1');    // TypeError: Cannot convert object to primitive value
+// console.log(String(obj2));
+// console.log(obj2 + '1');    // TypeError: Cannot convert object to primitive value
