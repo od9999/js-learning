@@ -1,13 +1,12 @@
-let toPrimitive = Symbol.toPrimitive;
-console.log(toPrimitive);
-
-const PreferredType = {
-    NUMBER: 'number',
-    STRING: 'string',
-    DEFAULT: 'default'
-};
-
-let obj = {
+const obj2 = {
+    valueOf() {
+        console.log('obj2.valueOf-----');
+        return {};
+    },
+    toString() {
+        console.log('obj2.toString-----');
+        return 10;
+    },
     [Symbol.toPrimitive](hint) {
         switch (hint) {
             case PreferredType.NUMBER:
@@ -26,7 +25,4 @@ let obj = {
     }
 };
 
-console.log(2 * obj);   // 246
-// console.log(3 + obj);  // '3default'
-// console.log(obj == 'default');  // true
-// console.log(String(obj));   // 'str'
+console.log(+obj2);

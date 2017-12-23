@@ -1,7 +1,7 @@
 function Animal(){ }
 Animal.prototype.species = "动物";
 
-function Cat(name,color){
+function Cat(name,color) {
 	this.name = name;
 	this.color = color;
 }

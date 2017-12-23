@@ -1,4 +1,3 @@
-
 /**
  * arr.reduce(callback[, initialValue])
  */

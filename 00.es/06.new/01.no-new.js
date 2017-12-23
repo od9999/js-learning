@@ -11,10 +11,11 @@ Person.prototype = {
 };
 
 Person.prototype.init.prototype = Person.prototype;
-
+// 无参构造
 let p1 = new Person(11);
 let p2 = new Person(22);
 console.log(p1 === p2);
+console.log(p1 instanceof Person);
 
 console.log(p1.age);
 console.log(p2.age);

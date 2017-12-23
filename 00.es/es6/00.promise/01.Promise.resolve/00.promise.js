@@ -10,6 +10,6 @@ const promise = new Promise((resolve, reject) => {
 const p = Promise.resolve(promise);
 console.log(p === promise);     // true
 
-p.then((data) => {
+p.then(data => {
     console.log(data);
 });

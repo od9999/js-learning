@@ -13,7 +13,7 @@ console.log(p);
 Object.freeze(p);
 console.log(Object.isFrozen(p));
 
-p.hobbies = ['1', '2', '3'];
+// p.hobbies = ['1', '2', '3'];
 console.log(p);
 
 p.name = 'zr';

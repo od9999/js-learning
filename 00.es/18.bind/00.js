@@ -10,12 +10,13 @@ function Person(name) {
 
 let context = {};
 let PersonBind = Person.bind(context);
+console.log(PersonBind.prototype);
 let personBind = PersonBind('PersonBind');
 let newPersonBind = new PersonBind('newPersonBind');
 console.log(personBind);
 console.log(newPersonBind);
 console.log('------');
-// 
+//
 // let context2 = {};
 // let PersonBind2 = PersonBind.bind(context2);
 // let personBind2 = PersonBind2('PersonBind2');

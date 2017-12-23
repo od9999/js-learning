@@ -11,9 +11,8 @@ console.log('----------------');
 // forEach不会返回新数组 其他都会返回新数组
 // 参数1 callback(数组每一项, 元素位置, 数组本身) 参数2 callback的作用域对象
 let arr4 = [5, -9, 18, 2, 0, 9];
-arr4.forEach(function(item, index, array){
+arr4.forEach(function(item, index, array) {
     console.log(arr4 === array);    // true
-    console.log(this === global);  // true
 });
 arr4.forEach(function(item, index, array){
     console.log(arr4 === array);    // true

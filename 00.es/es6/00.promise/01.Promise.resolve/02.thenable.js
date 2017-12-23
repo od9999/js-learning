@@ -1,5 +1,5 @@
 let thenable = {
-    then: function(resolve, reject) {
+    then(resolve, reject) {
         console.log(1);
         resolve('success');
     }
@@ -7,7 +7,7 @@ let thenable = {
 
 const promise = Promise.resolve(thenable);
 console.log(2);
-promise.then((data) => {
+promise.then(data => {
     console.log(data);
 });
 console.log(3);

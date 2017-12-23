@@ -2,7 +2,6 @@ let obj = {
 	name: 'od'
 };
 
-
 let arr = [
 	obj, 1, 3
 ];

@@ -14,7 +14,7 @@ console.log(p);
 Object.seal(p);
 console.log(Object.isSealed(p));
 
-p.hobbies = ['1', '2', '3'];
+// p.hobbies = ['1', '2', '3'];
 console.log(p);
 
 p.name = 'zr';

@@ -19,11 +19,10 @@ p1.then((value) => {
 	console.log(value);
 	// return 111;
 	return new Error('error');
-}).then((value) => {
+}).then(value => {
 	console.log('p1.then().then() resolve-------------');
 	console.log(value);
-}, (error) => {
+}, error => {
 	console.log('p1.then().then() reject-------------');
 	console.error(error);
-
 });

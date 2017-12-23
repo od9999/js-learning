@@ -15,7 +15,7 @@ console.log(p);
 Object.preventExtensions(p);
 console.log(Object.isExtensible(p));
 
-p.hobbies = ['1', '2', '3'];
+// p.hobbies = ['1', '2', '3'];  // TypeError: Cannot add property hobbies, object is not extensible
 console.log(p);
 
 p.name = 'zr';
