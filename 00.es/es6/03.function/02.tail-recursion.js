@@ -8,7 +8,7 @@
  * @param n
  * @returns {number}
  */
-function Fibonacci (n) {
+function Fibonacci(n) {
     if ( n <= 1 ) {
 		return 1
     }

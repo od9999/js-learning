@@ -34,17 +34,17 @@ console.log(this);    // {}
 console.log('------------');
 let obj2 = {
     name: 'od',
-    getName: function () {
+    getName() {
         return this.name;
     },
 
     // 箭头函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
-    getNameArrow: () => {
+    getNameArrow() {
         console.log(this);      // node文件中是{} repl是global 浏览器环境中是window
         return this.name;
     },
 
-    getNameArrow2: function() {
+    getNameArrow2() {
         const say = () => {
             return this.name;
         };
@@ -56,6 +56,3 @@ let obj2 = {
 console.log(obj2.getName());        // od
 console.log(obj2.getNameArrow());   // undefined
 console.log(obj2.getNameArrow2());   // od
-
-
-

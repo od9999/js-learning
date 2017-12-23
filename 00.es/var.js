@@ -5,10 +5,8 @@
 var a, b = 1;
 console.log(a);    // undefined
 console.log(b);    // 1
-
 console.log('a' in this); // 浏览器环境中true node.js中false
 console.log('b' in this); // 浏览器环境中true node.js中false
-
 
 // console.log(window.a);
 // console.log(window.b);

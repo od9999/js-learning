@@ -12,3 +12,11 @@ const obj1 = {
 };
 
 console.log(isArrayLike(obj1));
+
+function test() {
+    console.log(arguments);
+    console.log(Array.isArray(arguments));
+    console.log(Array.from(arguments));
+    console.log(Array.of(arguments));
+}
+test(1, 2, 3);

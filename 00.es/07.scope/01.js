@@ -4,7 +4,7 @@ let obj = {
         console.log(this.name);
     }
 };
-
+console.log(this);
 let sayHello = obj.sayHello;
 sayHello();
 
