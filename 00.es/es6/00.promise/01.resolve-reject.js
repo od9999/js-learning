@@ -1,5 +1,6 @@
 let p = new Promise((resolve, reject) => {
 	console.log(111);
+	// 最好加上return 因为执行resolve或reject后 后续代码没有意义 更安全
 	resolve('value');
 	// reject(new Error('reject'));
 	console.log(222);
