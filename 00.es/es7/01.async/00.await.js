@@ -1,16 +1,19 @@
 console.log(111);
 const asyncTask = (data, millisecond) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
+        // setTimeout(() => {
             resolve(data);
-        }, millisecond);
+        // }, millisecond);
     });
 };
 
 const run = async () => {
-
+    console.log(222);
     let task1Result = await asyncTask('task1', 1000);
     console.log(task1Result);
+
+    let task2Result = await asyncTask('task2', 500);
+    console.log(task2Result);
 
     setTimeout(() => {
         console.log('setTimeout');
@@ -21,20 +24,18 @@ const run = async () => {
     console.log(syncResult);
 
     new Promise((resolve, reject) => {
-        resolve('promise')
-    }).then((data) => {
+        resolve('promise');
+    }).then(data => {
         console.log(data);
     });
 
-    let task2Result = await asyncTask('task2', 1000);
-    console.log(task2Result);
+    let task3Result = await asyncTask('task3', 1000);
+    console.log(task3Result);
+    return '555';
 };
 
-console.log(222);
-run();
 console.log(333);
-
-
-
-
-
+run().then(data => {
+    console.log(data);
+});
+console.log(444);

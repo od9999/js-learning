@@ -1,4 +1,4 @@
-const asyncFunc= async () => {
+const asyncFunc = async () => {
     return 'async func';
 };
 
@@ -13,7 +13,8 @@ console.log(asyncFunc instanceof Function);
 const bindAyncFunc = asyncFunc.bind(null);
 console.log(bindAyncFunc);
 
-
-
-
-
+let p = asyncFunc();
+console.log(p instanceof Promise);
+p.then(data => {
+    console.log(data);
+});
