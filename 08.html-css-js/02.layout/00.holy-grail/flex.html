@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圣杯布局 - flex</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.HolyGrail {
+			display: flex;
+			min-height: 100vh;
+			flex-direction: column;
+		}
+
+		header,
+		footer {
+			flex: 1;
+		}
+		header {
+			background-color: darkseagreen;
+		}
+		footer {
+			background-color: darkslategray;
+		}
+
+		.HolyGrail-body {
+			display: flex;
+			flex: 1;
+		}
+
+		.HolyGrail-content {
+			flex: 1;
+			background-color: deeppink;
+		}
+
+		.HolyGrail-nav, .HolyGrail-ads {
+			/* 两个边栏的宽度设为12em */
+			flex: 0 0 12em;
+		}
+
+		.HolyGrail-nav {
+			/* 导航放到最左边 */
+			order: -1;
+			background-color: blue;
+		}
+		.HolyGrail-ads {
+			background-color: darkorchid;
+		}
+
+		@media (max-width: 768px) {
+			.HolyGrail-body {
+				flex-direction: column;
+				flex: 1;
+			}
+			.HolyGrail-nav,
+			.HolyGrail-ads,
+			.HolyGrail-content {
+				flex: auto;
+			}
+		}
+	</style>
+</head>
+
+<body class="HolyGrail">
+	<header>header</header>
+	<div class="HolyGrail-body">
+		<main class="HolyGrail-content">HolyGrail-content</main>
+		<nav class="HolyGrail-nav">HolyGrail-nav</nav>
+		<aside class="HolyGrail-ads">HolyGrail-ads</aside>
+	</div>
+	<footer>footer</footer>
+</body>
+</html>
