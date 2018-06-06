@@ -24,7 +24,8 @@ const test = async () => {
     console.log(333);
     return 'test';
 };
-
+test();
 console.log(typeof test);
 console.log(test.prototype);
 console.log('prototype' in test);
+

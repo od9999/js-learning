@@ -1,4 +1,4 @@
-class Loop {
+ class Loop {
     constructor(fn, interval) {
         this.fn = fn;
         this.interval = interval;

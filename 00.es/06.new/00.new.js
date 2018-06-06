@@ -10,8 +10,6 @@ let p = new Person('od', 23);
 console.log(p);   // [Boolean: false]
 
 
-
-
 function Person2(name, age){
     this.name = name;
     this.age = age;

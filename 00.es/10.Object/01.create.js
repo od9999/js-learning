@@ -8,8 +8,9 @@
 let o = Object.create(null);
 
 // 创建一个原型为null的空对象
-console.log(o.__proto__ === null);	// false
-console.log(o.__proto__ === undefined);	// true
+console.log(Object.getPrototypeOf(o));	// null
+console.log(o.__proto__);		// undefined
+console.log(Object.getPrototypeOf(o) === o.__proto__);		// false
 
 o = {};
 // 以字面量方式创建的空对象就相当于:
@@ -21,16 +22,16 @@ o = Object.create(Object.prototype, {
 	foo: {
 		writable: true,
 		configurable: true,
-		value: "hello"
+		value: 'hello'
 	},
 	// bar会成为所创建对象的访问器属性
 	bar: {
 		configurable: false,
-		get: function() {
+		get() {
 			return 10;
 		},
-		set: function(value) {
-			console.log("Setting `o.bar` to", value);
+		set(value) {
+			console.log('Setting `o.bar` to', value);
 		}
 	}
 });

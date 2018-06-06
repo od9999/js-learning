@@ -7,9 +7,7 @@
  （4）不可以使用yield命令，因此箭头函数不能用作Generator函数。
  * @param a
  */
-var arrow = a => {
-    return a + 1;
-};
+const arrow = a => a + 1;
 console.log(arrow.prototype);   // undefined
 console.log(arrow.__proto__ === Function.prototype);	// true
 console.log(arrow instanceof Function);					// true

@@ -16,3 +16,4 @@ console.log(A.staicProp);
 console.log(B.staicProp);
 console.log(B.staicProp === A.staicProp);   // true
 console.log(B.__proto__ === A); // true
+console.log(B.hasOwnProperty('staicProp'));  // false

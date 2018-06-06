@@ -17,6 +17,7 @@ console.log(new Number(1));
 console.log(new Number(0) instanceof Number);
 */
 
+console.log('-----');
 class MyNumber2 extends Number {
     constructor(x) {
         super(x);
