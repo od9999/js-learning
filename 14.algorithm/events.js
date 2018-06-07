@@ -11,7 +11,7 @@ EventEmitter.prototype.on = function (eventName, func) {
 };
 
 EventEmitter.prototype.off = function (eventName, func) {
-	this._events[eventName]	= this._events[eventName].filter(function (item, index, array) {
+	this._events[eventName] = this._events[eventName].filter(function (item, index, array) {
 		return item !== func;
 	});
 };

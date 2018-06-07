@@ -3,15 +3,15 @@
  * 如[1, 5, 7, -4, 1, 1, 1]中1出现的次数超过元素的一半
  */
 function getMaxCountNum (arr) {
-    var candidate;
-    var nTimes = 0;
+    let candidate;
+    let nTimes = 0;
 
     for (let i = 0; i < arr.length; i++) {
         if (nTimes === 0) {
             candidate = arr[i];
             nTimes = 1;
         } else {
-            if (candidate == arr[i]) {
+            if (candidate === arr[i]) {
                 nTimes++;
             } else {
                 nTimes--;

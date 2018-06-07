@@ -1,9 +1,9 @@
 console.log(111);
 const asyncTask = (data, millisecond) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data);
-        }, millisecond);
+        // setTimeout(() => {
+        resolve(data);
+        // }, millisecond);
     });
 };
 
@@ -12,7 +12,6 @@ const run = async () => {
     let task1Result = await asyncTask('task1', 1000);
     console.log(task1Result);
 
-    /*
     setTimeout(() => {
         console.log('setTimeout');
     });
@@ -29,7 +28,6 @@ const run = async () => {
 
     let task3Result = await asyncTask('task3', 1000);
     console.log(task3Result);
-    */
     return '555';
 };
 

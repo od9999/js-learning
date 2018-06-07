@@ -16,17 +16,11 @@ const separateArray = (arr, separateBy) => {
     return arr;
 };
 
-const isEven = (num) => {
-    return (num & 1) === 0;
-};
+const isEven = num => (num & 1) === 0;
 
-const isNegative = (num) => {
-    return num < 0;
-};
+const isNegative = num => num < 0;
 
-const isPositive = (num) => {
-    return !isNegative(num);
-};
+const isPositive = (num) => !isNegative(num);
 
 
 console.log(separateArray([1, -3, 4, 8, -2, 8], isEven));

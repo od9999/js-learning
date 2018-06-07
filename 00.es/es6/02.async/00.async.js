@@ -18,8 +18,8 @@ const sayHello = () => {
 const sayHi = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-        	resolve('hi');
-    	}, 1000);
+			resolve('hi');
+		}, 1000);
 	});
 };
 
