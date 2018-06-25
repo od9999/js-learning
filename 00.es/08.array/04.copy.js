@@ -3,9 +3,7 @@ let arr = [5, -9, 18, 2, 0, 9];
 // 复制数组
 let arr2 = arr.concat();
 arr2.push(10);
-let arr3 = arr.filter(function(item){
-    return true;
-});
+let arr3 = arr.filter(item => true);
 console.log(arr);
 console.log(arr2);
 console.log(arr3);
