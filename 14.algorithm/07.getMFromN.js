@@ -1,17 +1,19 @@
-/**
- * 从数组arr中找到m个元素 和为k
- */
-function getMFromN(arr, m, K) {
-	let forObj = {};
-	for(let i = 0; i < K; i++) {
-		forObj['k' + i] = i;
 
+function getMFromN(arr, array, n, sum) {
+	if (sum < 0 || n < 0 || array.length === 0) {
+        return;
+    }
+    if (sum === 0 && n === 0) {
+		console.log('---');
+		arr.forEach(item => console.log(item));
+		return;
 	}
-	for(let i = 0; i < arr.length - K; i++) {
-		for(let j = i + 1; j < arr.length - K + 1; j++) {
-
-		}
-	}
+    arr = Array.from(arr);
+    array = Array.from(array);
+	const firstNum = array.shift();
+    getMFromN(arr, array, n, sum);
+    arr.push(firstNum);
+    getMFromN(arr, array, n - 1, sum - firstNum);
 }
 
-console.log(getMFromN([1, 2, 3, 6, 8, 9], 3));
+getMFromN([], [1, 2, 3, 6, 8, 9], 3, 11)
