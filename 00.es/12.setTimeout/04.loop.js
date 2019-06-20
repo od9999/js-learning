@@ -3,9 +3,8 @@
         this.fn = fn;
         this.interval = interval;
         this.timerId = null;
-        this.on();
     }
-    on() {
+    _on() {
         const self = this;
         const interval = self.interval;
         clearTimeout(this.timerId);
@@ -15,6 +14,9 @@
             self.timerId = setTimeout(func, interval);
             self.fn(stop);
         }, interval);
+    }
+    start() {
+        this._on();
     }
     stop() {
         clearTimeout(this.timerId);
@@ -26,8 +28,10 @@ const loop = new Loop(stop => {
     if (counter === 4) {
         stop();
     }
+    console.log(counter);
     console.log(counter++);
 }, 1000);
-setTimeout(() => {
-    loop.stop();
-}, 3000)
+loop.start();
+// setTimeout(() => {
+//     loop.stop();
+// }, 3000)
