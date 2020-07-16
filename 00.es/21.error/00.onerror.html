@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" onerror="imgError()" src="https://js2.a.yximgs.com/bs2/courseHead/cf7f42a920534ca5928599d2fcfe9b3da" />
+    <!-- <img onerror="imgError" src="https://js2.a.yximgs.com/bs2/courseHead/cf7f42a920534ca5928599d2fcfe9b3d" /> -->
+    <script>
+        document.getElementById('img').addEventListener('error', error => {
+            console.log('img addEventListener error-----');
+            console.log(error);
+            setTimeout(() => {
+                error.target.src = 'https://js2.a.yximgs.com/bs2/courseHead/cf7f42a920534ca5928599d2fcfe9b3d';
+            }, 1000);
+            // error.preventDefault();
+        });
+        function imgError(error) {
+            console.log('img onerror-----');
+            console.log(error);
+        }
+        window.onerror = (message, source, lineno, colno, error) => {
+            console.log('onerror---');
+            console.log(message);
+            console.log(source);
+            console.log(lineno);
+            console.log(colno);
+            console.log(error);
+        };
+        window.addEventListener('error', e => {
+            console.log('addEventListener error---');
+            console.log(e);
+            // 不会抛到console.log
+            e.preventDefault();
+        });
+        console.log(a);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            resolve(1);
+        });
+        p.then(data => {
+            return data;
+        }).then(data => {
+            console.log(a);
+        });
+        Promise.reject('error 2');
+        window.addEventListener('unhandledrejection', error => {
+            console.log('unhandledrejection----');
+            console.log(error);
+            console.log(error.reason);
+            error.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

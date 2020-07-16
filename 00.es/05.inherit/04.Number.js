@@ -29,3 +29,4 @@ let myNumber2 = new MyNumber2(3);
 console.log(myNumber2);
 console.log(myNumber2.x);
 console.log(myNumber2.valueOf());
+console.log(myNumber2 instanceof Number);
