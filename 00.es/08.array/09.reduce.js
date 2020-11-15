@@ -29,4 +29,4 @@ const sum3 = [].reduce((sum , item, index, array) => {
     console.log(`index: ${index}`);
     console.log(`array: ${array}`);
     return sum + item;
-});
+}, 0);

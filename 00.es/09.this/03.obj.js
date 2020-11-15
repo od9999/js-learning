@@ -9,7 +9,7 @@ function fn2(fn) {
 	fn();
 }
 
-fn2(fn1);
+fn2(fn1); // 浏览器环境下 2 node环境下是NaN
 
 function fn3() {
 	this.a = 3;

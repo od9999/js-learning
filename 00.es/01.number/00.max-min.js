@@ -9,6 +9,7 @@ console.log(-Number.MAX_VALUE);
 console.log(+Number.MIN_VALUE);
 
 console.log(Infinity - Infinity);  // NaN
+console.log(Infinity + Infinity);  // NaN
 console.log(0 / 0);  // NaN
 console.log(1 / 0);  // Infinity
 

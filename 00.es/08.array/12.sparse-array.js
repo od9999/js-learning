@@ -38,6 +38,6 @@ console.log('find=====');
 arr.find((item, index) => {
     console.log('----');
     console.log(index);
-    index === 3 && (console.log('aaaa'));
+    // index === 3 && (console.log('aaaa'));
     return item === undefined;
 });

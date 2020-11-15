@@ -1,4 +1,5 @@
 function Person(name, age){
+    console.log(Object.getPrototypeOf(this) === Person.prototype); // true
     this.name = name;
     this.age = age;
     // this = new Boolean(false);  // ReferenceError: Invalid left-hand side in assignment

@@ -1,6 +1,4 @@
-const isNaN = val => {
-	return val !== val;
-};
+const isNaN = val => val !== val;
 
 console.log(isNaN(NaN));
 console.log(isNaN(1));
